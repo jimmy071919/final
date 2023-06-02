@@ -1,0 +1,180 @@
+/* ------------------商品葉面--------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+.imgslider img{
+    text-align: center;
+    width: 100%;
+    height: 500px;
+}
+.contain{
+    padding: 10px 25px 0 0; 
+    width: 100%;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows:60px auto 60px auto ; 
+    gap: 20px ;
+    grid-auto-flow: column ;
+    background-color: #f4f1e8;
+}
+
+.shoptitle{
+    padding: 10px 60px ; 
+    border-radius: 20px;
+    text-align: center;  
+    background-color: aqua;
+}
+#title1{
+    grid-row: 1/2 ;
+    grid-column: 2/3;
+}
+#title2{
+    grid-row: 3/4 ;
+    grid-column: 2/3; 
+}
+
+.shoplist{
+    padding: 50px 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    grid-gap: 50px;
+    background-color: blueviolet;
+}
+
+#list{    
+    grid-row: 2/3 ;
+    grid-column: 2/3; 
+}
+#list2{
+    grid-row: 4/5 ;
+    grid-column: 2/3;
+}
+.production{
+    padding: 40px;
+    border-radius: 20px;
+    background-color: azure;
+}
+.shoplist img{
+    width: 140px;    
+}
+.information{
+    text-align: center;
+}
+.moreinfo{
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    right: -40px;
+    padding: 5px;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+    background-color: rgb(152, 20, 20);
+}
+.moreinfo:hover{
+    background-color: gray;
+}
+/* -----------------------商品內容---------------------------- */
+#shop2{
+    background-color: #f4f1e8;
+}
+/* ----------------------------------------------------- */
+.gotobuy{
+    padding: 20px 50px 20px 0px ;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px auto auto 100px ;
+    background-color: #f4f1e8;
+    clear: both;
+}
+#productionimg{
+    grid-row: 1/5 ;
+    grid-column: 1/2;
+    width: 300px;
+}
+#productionname{
+    text-align: center;
+    padding: 20px 0 0 0 ;
+    font-size: 40px;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    
+}
+#productionprice{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    font-size: 30px;
+}
+.number{
+    text-align: left;
+    border: ˇ0px;
+    grid-row: 3/4;
+    grid-column: 2/3;
+    cursor: pointer;
+}
+#buy,#addcart{
+    background-color: white;
+    color: black;
+}
+#up, #down {
+    text-align: center;
+    width: 50px;
+    background-color: #f4f1e8;
+    border: none;
+}
+#num{
+    text-align: center;
+    width: 100px;
+    border: none;
+}
+
+#productiondescription{
+    grid-row: 4/5;
+    grid-column: 2/3;
+    padding: 20px 20px 0 20px;
+    border-radius: 20px ;
+    background-color: #f4f1e8 ;
+}
+/* ---------------------評價------------------------- */
+.discussion{
+    text-align: center;
+}
+.writeboard{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 30px auto auto;
+    grid-row-gap: 15px;
+    padding: 20px;
+}
+.writeboard input{
+    width: 500px;
+}
+#inputaccount{
+    grid-row: 1;
+    grid-column: 1/2;
+}
+#inputtitle{
+    grid-row: 2;
+    grid-column: 1/2;
+}
+.inputword{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+table{
+    text-align: left;
+    background-color:white;
+    width: 400px;
+    grid-column: 2/3;
+    grid-row: 1/4;
+}
+/* ----------展示圖--------- */
+#showimg{
+    grid-row: 4/5;
+    grid-column: 1/3;
+    padding: 40px;
+}

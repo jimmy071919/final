@@ -1,0 +1,47 @@
+const shopitem1 = {
+    0: {id:'0',name: '酒一', description: '樂事只選用當令新鮮馬鈴薯，鮮切成金黃香脆洋芋片。最好吃的樂事洋芋片，隨時享受簡單的快樂！', price: '25', img: 'wine.png'},
+    1: {id:'1',name: '酒二', description: '維力炸醬麵，麵體Q、料香濃，乾麵附湯一包兩吃，道地家鄉口味是全家大小百吃不厭的好口味！', price: '20', img: 'wine.png'},
+    2: {id:'2',name: '酒三', description: '遵循傳統焙炒工藝成就特有大麥風味溫潤茶韻與順滑奶香相互融合甜香不膩口的麥香奶茶。', price: '15', img: 'wine.png'},
+    3: {id:'3',name: '酒四', description: '醇厚紅茶結合焙炒大麥，成就獨特大麥風味、暢銷全台灣的紅茶飲料。', price: '15', img: 'wine.png'},
+    4: {id:'4',name: '酒五', description: '選用甜香特色的焙香綠茶葉，萃取醇厚甜香茶汁，搭配大麥焙炒甜香，呈現獨特大麥風味的綠茶。', price: '15', img: 'wine.png'},
+    5: {id:'5',name: '酒六', description: '樂事只選用當令新鮮馬鈴薯，鮮切成金黃香脆洋芋片。最好吃的樂事洋芋片，隨時享受簡單的快樂！', price: '25', img: 'wine.png'},
+    6: {id:'6',name: '酒七', description: '維力炸醬麵，麵體Q、料香濃，乾麵附湯一包兩吃，道地家鄉口味是全家大小百吃不厭的好口味！', price: '20', img: 'wine.png'},
+    7: {id:'7',name: '酒八', description: '遵循傳統焙炒工藝成就特有大麥風味溫潤茶韻與順滑奶香相互融合甜香不膩口的麥香奶茶。', price: '15', img: 'wine.png'},
+    8: {id:'8',name: '酒酒', description: '醇厚紅茶結合焙炒大麥，成就獨特大麥風味、暢銷全台灣的紅茶飲料。', price: '15', img: 'wine.png'},
+    9: {id:'9',name: '酒十', description: '選用甜香特色的焙香綠茶葉，萃取醇厚甜香茶汁，搭配大麥焙炒甜香，呈現獨特大麥風味的綠茶。', price: '15', img: 'wine.png'},
+};
+
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+let items;
+
+window.onload= function(){ //此可以讓網頁全部渲染完才顯示出來  **有用到await時 前面要加上async
+    addListener()
+    items = shopitem1 ;
+    let tmp = urlParams.get('id');
+    setItem(items[tmp]);
+    // 這邊讓他將參數帶進網址中，然後會依此變化顯示不一樣的網頁內容==>和下面的
+}
+function setItem(obj) {
+    $('#productionimg').attr("src",'./image/'+ obj.img);
+    $('#productionname').text(obj.name);
+    $('#productiondescription').text(obj.description);
+    $('#productionprice').text('售價：$'+ obj.price);
+    $("#num").val("0");
+    $('#showimg').attr("src",'./image/'+ obj.img);
+} 
+function addListener() {
+    let num = document.getElementById("num");
+    document.getElementById("up").addEventListener("click", function() {
+        num.value = parseInt(num.value)+1;
+    });
+    document.getElementById("down").addEventListener("click", function() {
+        if(num.value <= 0) {
+            num.value = 0;
+        }else {
+            num.value = parseInt(num.value)-1;
+        }
+    });
+}
