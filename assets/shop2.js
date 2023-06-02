@@ -12,15 +12,19 @@ const shopitem1 = {
 };
 
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
+const searchcontent = window.location.search;
+// 取得當前網址的查詢字串部分，並將它儲存在變數中。
+const urlParams = new URLSearchParams(searchcontent);
+// 以URLSearchParams解析URL 並存在urlParams中
 
 let items;
 
-window.onload= function(){ //此可以讓網頁全部渲染完才顯示出來  **有用到await時 前面要加上async
+window.onload= function(){ //此可以讓網頁全部渲染完才顯示出來  
     addListener()
     items = shopitem1 ;
+    // 將變數指配到上方物件
     let tmp = urlParams.get('id');
+    // 將URL中所得的id拿下來 存在變數中
     setItem(items[tmp]);
     // 這邊讓他將參數帶進網址中，然後會依此變化顯示不一樣的網頁內容==>和下面的
 }
@@ -31,6 +35,8 @@ function setItem(obj) {
     $('#productionprice').text('售價：$'+ obj.price);
     $("#num").val("0");
     $('#showimg').attr("src",'./image/'+ obj.img);
+
+    // 將不同上方取得的物件的內容寫入對應的id之中 *$用以取得對應id位置
 } 
 function addListener() {
     let num = document.getElementById("num");
@@ -45,3 +51,10 @@ function addListener() {
         }
     });
 }
+// 當id為up的元素被點擊時，會執行一個匿名函式，該函式將 num 元素的值進行增加 1 的操作。
+// parseInt 函式將 num.value 轉換為整數後進行遞增。
+
+// 當id為down的原素被點擊時，執行一個匿名函式，該函式先判斷 num.value 的值是否小於等於 0
+// 如果是==> num.value 設為 0       如果不是==>則將 num.value 進行減 1 的操作。
+
+// 當 "up" 或 "down" 元素被點擊時，會根據相應的操作來增加或減少 num 元素的值。

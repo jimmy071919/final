@@ -2,6 +2,8 @@ window.onload = function() {
     generateItems();
     generateItems2();
 };
+// 用以確保網頁中的內容都跑完了才呈現出來
+
 const shopitem1 = {
     0: {id:'0',name: '酒一', description: '樂事只選用當令新鮮馬鈴薯', price: '25', img: 'wine.png'},
     1: {id:'1',name: '酒二', description: '維力炸醬麵，麵體Q、料香濃，乾麵附湯一包兩吃', price: '20', img: 'wine.png'},
@@ -18,17 +20,20 @@ const shopitem2 = {
 };
 function generateItems() {
     let objLength = Object.keys(shopitem1).length;
-    let needAppendElement = $("#list");
+    // 設定一個變數==> 以Object.keys取得物件的索引編碼並存成陣列的形式
+    // let findandadd = $("#list");
+    // 設定一個變數==>此用以代表$("#list") ==>$代表取得id為list的內容  *$代表取得id的內容
     for(let i=0; i<objLength; i++) {
-        needAppendElement.append(newCardItem(shopitem1[i.toString()]));
+        $("#list").append(newCardItem(shopitem1[i.toString()]));
     }
 }
 function generateItems2() {
     let objLength = Object.keys(shopitem2).length;
-    let needAppendElement = $("#list2");
     for(let i=0; i<objLength; i++) {
-        needAppendElement.append(newCardItem(shopitem2[i.toString()]));
+        $("#list2").append(newCardItem(shopitem2[i.toString()]));
     }
+    // 用for迴圈讀取全部的物件==>並傳去newCardItem的函數中 *向下看
+    // 用append將內容一行一行的加進id為list2的內容中
 }
 function newCardItem(item) {
     let temp = '';
@@ -42,3 +47,4 @@ function newCardItem(item) {
     // 這邊會呼應到上面的generateItems的函數
     return temp;
 }
+// 用一個變數儲存特定物件相關的內容==>並以字串傳回去 *向回去看
