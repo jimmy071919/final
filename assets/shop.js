@@ -1,6 +1,7 @@
 window.onload = function() {
     generateItems();
     generateItems2();
+    generateItems3()
 };
 // 用以確保網頁中的內容都跑完了才呈現出來
 
@@ -12,6 +13,13 @@ const shopitem1 = {
     4: {id:'4',name: '酒五', description: '選用甜香特色的焙香綠茶葉，萃取醇厚甜香茶汁，呈現獨特大麥風味的綠茶。', price: '15', img: 'wine.png'},
 };
 const shopitem2 = {
+    0: {id:'5',name: '酒六', description: '樂事只選用當令新鮮馬鈴薯，鮮切成金黃香脆洋芋片', price: '25', img: 'wine.png'},
+    1: {id:'6',name: '酒七', description: '維力炸醬麵，麵體Q、料香濃', price: '20', img: 'wine.png'},
+    2: {id:'7',name: '酒八', description: '遵循傳統焙炒工藝成就特有大麥茶。', price: '15', img: 'wine.png'},
+    3: {id:'8',name: '酒酒', description: '醇厚紅茶結合焙炒大麥，', price: '15', img: 'wine.png'},
+    4: {id:'9',name: '酒十', description: '選用甜香特色的焙香綠茶葉', price: '15', img: 'wine.png'},
+};
+const shopitem3 = {
     0: {id:'5',name: '酒六', description: '樂事只選用當令新鮮馬鈴薯，鮮切成金黃香脆洋芋片', price: '25', img: 'wine.png'},
     1: {id:'6',name: '酒七', description: '維力炸醬麵，麵體Q、料香濃', price: '20', img: 'wine.png'},
     2: {id:'7',name: '酒八', description: '遵循傳統焙炒工藝成就特有大麥茶。', price: '15', img: 'wine.png'},
@@ -35,13 +43,21 @@ function generateItems2() {
     // 用for迴圈讀取全部的物件==>並傳去newCardItem的函數中 *向下看
     // 用append將內容一行一行的加進id為list2的內容中
 }
+function generateItems3() {
+    let objLength = Object.keys(shopitem3).length;
+    for(let i=0; i<objLength; i++) {
+        $("#list3").append(newCardItem(shopitem3[i.toString()]));
+    }
+    // 用for迴圈讀取全部的物件==>並傳去newCardItem的函數中 *向下看
+    // 用append將內容一行一行的加進id為list2的內容中
+}
 function newCardItem(item) {
     let temp = '';
     // 寫child的架構
     temp+='<div>';
     temp+=  '<div class="production"><img src="./image/'+item.img+'"></img>';
     temp+=  '<div class="name">'+item.name+'</div>'
-    temp+=  '<p><a class="moreinfo" target="_blank" href="./shop2.html?id=' + item.id + '">查看詳情</a></div></p>';
+    temp+=  '<p><a class="moreinfo"  href="./shop2.html?id=' + item.id + '">查看詳情</a></div></p>';
     temp+='</div>';
     // 這邊會呼應到上面的generateItems的函數
     return temp;

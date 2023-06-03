@@ -18,7 +18,7 @@
     padding: 10px 0 0 0; 
     border-radius: 20px;
     display: grid;
-    grid-template-rows:60px auto 60px auto ; 
+    grid-template-rows:60px auto 60px auto 60px auto; 
     grid-row-gap: 20px;
     grid-auto-flow: column ;
     background-color: #f4f1e8;

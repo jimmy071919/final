@@ -25,9 +25,14 @@ window.onload= function(){ //此可以讓網頁全部渲染完才顯示出來
     // 將變數指配到上方物件
     let tmp = urlParams.get('id');
     setItem(items[tmp]);
+    change_title(items[tmp])
     // 將URL中所得的id拿下來 存在變數中
     // 這邊讓他將參數帶進網址中，然後會依此變化顯示不一樣的網頁內容==>和下面的
 }
+function change_title(obj) {
+     document.title= obj.name ;
+}
+
 function setItem(obj) {
     $('#productionimg').attr("src",'./image/'+ obj.img);
     $('#productionname').text(obj.name);
