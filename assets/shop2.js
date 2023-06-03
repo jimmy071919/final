@@ -24,8 +24,8 @@ window.onload= function(){ //此可以讓網頁全部渲染完才顯示出來
     items = shopitem1 ;
     // 將變數指配到上方物件
     let tmp = urlParams.get('id');
-    // 將URL中所得的id拿下來 存在變數中
     setItem(items[tmp]);
+    // 將URL中所得的id拿下來 存在變數中
     // 這邊讓他將參數帶進網址中，然後會依此變化顯示不一樣的網頁內容==>和下面的
 }
 function setItem(obj) {
@@ -35,8 +35,7 @@ function setItem(obj) {
     $('#productionprice').text('售價：$'+ obj.price);
     $("#num").val("0");
     $('#showimg').attr("src",'./image/'+ obj.img);
-
-    // 將不同上方取得的物件的內容寫入對應的id之中 *$用以取得對應id位置
+// 將不同上方取得的物件的內容寫入對應的id之中 *$用以取得對應id位置
 } 
 function addListener() {
     let num = document.getElementById("num");
