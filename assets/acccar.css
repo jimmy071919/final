@@ -1,0 +1,81 @@
+/* 會員登入註冊 */
+.container {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+  
+h2 {
+    margin-bottom: 20px;
+}
+  
+form {
+    text-align: left;
+}
+  
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* input是css選擇器
+選擇所有type屬性值為text和password */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+  
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: burlywood;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+  
+p {
+    margin-top: 20px;
+}
+
+.push{
+    color: rgb(126, 126, 254);
+}
+
+.push:hover{
+    color: rgb(217, 188, 254);
+}
+
+/* 會員資料 */
+.member {
+    display: flex;
+    justify-content: center;
+    padding-top: 8%;
+}
+
+.member-left {
+    width: 240px;
+    margin-right: 2%;
+}
+
+.pht{
+    width: 250px;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+}
+
+.pht img {
+    border-radius: 50%;
+    border: #000 solid 1px;
+}
+
+.mebut{
+    margin-top: 25px;
+}
