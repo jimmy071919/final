@@ -18,7 +18,7 @@
     padding: 10px 0 0 0; 
     border-radius: 20px;
     display: grid;
-    grid-template-rows:60px auto 60px auto ; 
+    grid-template-rows:60px auto 60px auto 60px auto; 
     grid-row-gap: 20px;
     grid-auto-flow: column ;
     background-color: #f4f1e8;
@@ -172,7 +172,7 @@
 .writeboard{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 30px 30px auto auto;
+    grid-template-rows: 30px 30px auto 30px  auto;
     grid-row-gap: 15px;
     padding: 20px;
 }
@@ -188,19 +188,54 @@
     grid-column: 1/2;
 }
 .inputword{
-    grid-column: 1/2;
     grid-row: 3/4;
+    grid-column: 1/2;
 }
+.send{
+    grid-row: 4/5;
+    grid-column: 1/2;
+}
+.send input{
+    width: 100px;
+}
+.sub{
+    
+    font-size: 17px;
+    font-weight: bolder;
+    background-color: #ffe9e9;
+    border: 3px solid #ededed; 
+}
+.sub:hover{
+    font-weight: bolder;
+    color: rgb(1, 4, 28);
+    background-color: rgb(241, 240, 240);
+    opacity: 0.6;
+}
+.res{
+    
+    font-size: 17px;
+    font-weight: bolder;
+    background-color: #ffe9e9;
+    border: 3px solid #ededed; 
+    margin-left: 10px;
+}
+.res:hover{
+    font-weight: bolder;
+    color: rgb(1, 4, 28);
+    background-color: rgb(241, 240, 240);
+    opacity: 0.6;
+}
+
 table{
     text-align: left;
     background-color:white;
     width: 400px;
     grid-column: 2/3;
-    grid-row: 1/4;
+    grid-row: 1/5;
 }
 /* ----------展示圖--------- */
 #showimg{
-    grid-row: 4/5;
+    grid-row: 5/6;
     grid-column: 1/3;
     padding: 40px;
 }

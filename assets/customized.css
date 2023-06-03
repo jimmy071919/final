@@ -385,9 +385,13 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-row-gap: 15px;
-    margin-left: 90px;
+    margin-left: 100px;
+    margin-top: 50px;
 }
+.form{
+    grid-column: 1/2;
 
+}
 .typetext{
     margin-bottom: 20px;
     height: 30px;
@@ -436,17 +440,10 @@
 }
 
 .others{
+    grid-column: 2/3;
     font-size: 18px;
     margin-left: 80px;
     margin-top: -20px;
     border: 3px solid #9a9a9a; 
     width: 280px;
 }
-
-.custdown{
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 1100px;
-    height: 600px
-}
-
