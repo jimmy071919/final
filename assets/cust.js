@@ -1,5 +1,5 @@
 // 購物車增減
-window.onload=async function(){
+window.onload= function(){
     addListener();
     addCartListener();
 }
