@@ -11,7 +11,7 @@
 
 .imgslider img{
     width: 1300px;
-    height: 500px;
+    height: 700px;
 }
 .contain{
     
@@ -28,7 +28,7 @@
     padding: 15px 60px ;
     border-radius: 20px;
     text-align: center;  
-    background-color: aqua;
+    background-color: white;
 }
 #title1{
     grid-row: 1/2 ;
@@ -41,13 +41,14 @@
 
 .shoplist{
     text-align: center;
-    padding: 50px 40px;
+    padding: 50px 100px 0 80px;
     border-radius: 20px;
     display: grid;
-    grid-template-columns:240px 240px 240px  240px;
-    grid-template-rows: 300px 300px ;
-    grid-gap: 20px;
-    background-color: blueviolet;
+    grid-template-columns:240px 240px 240px 240px;
+    grid-template-rows: 400px 400px ;
+    grid-row-gap: 5px;
+    grid-column-gap: 50px;
+    background-color: white;
 }
 
 #list{    
@@ -62,10 +63,12 @@
     height: 300px;
     padding: 40px;
     border-radius: 20px;
-    background-color: azure;
+    background-color: white;
 }
 .shoplist img{
-    width: 140px;    
+    border-radius: 20px;
+    width: 210px;  
+    height: 240px;  
 }
 .information{
     text-align: center;
@@ -76,19 +79,19 @@
     top: 20px;
     padding: 5px;
     border-radius: 10px;
-    color: black;
+    color: white;
     text-decoration: none;
-    background-color: rgb(152, 20, 20);
+    background-color: burlywood;
 }
 .moreinfo:hover{
-    background-color: gray;
+    background-color: plum;
 }
 /* -----------------------商品內容---------------------------- */
 #shop2{
     box-sizing: border-box;
     margin: 0 auto;
     scroll-behavior: smooth;
-    background-color: #f4f1e8;
+    background-color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -96,43 +99,61 @@
 }
 /* ----------------------------------------------------- */
 .gotobuy{
-    text-align: center;
+    text-align: left;
     padding: 20px 50px 20px 0px ;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px auto auto 100px ;
-    background-color: #f4f1e8;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 100px auto auto auto 100px ;
+    background-color: white;
     clear: both;
 }
 #productionimg{
-    grid-row: 1/5 ;
+    grid-row: 1/6 ;
     grid-column: 1/2;
-    width: 300px;
+    width: 500px;
+    height: 550px;
 }
 #productionname{
-    text-align: center;
     padding: 20px 0 0 0 ;
     font-size: 40px;
+    font-weight: bolder;
     grid-row: 1/2;
     grid-column: 2/3;
+    
     
 }
 #productionprice{
     grid-row: 2/3;
     grid-column: 2/3;
     font-size: 30px;
+    font-weight: bolder;
+    
 }
 .number{
-    text-align: left;
-    border: ˇ0px;
-    grid-row: 3/4;
+    border: 0px;
+    grid-row: 4/5;
     grid-column: 2/3;
     cursor: pointer;
+    display: inline;
+    
 }
-
+#down,#num,#up{
+    grid-row: 1;
+}
+.function{
+    grid-row: 5/6 ;
+    grid-column: 2;
+}
 #buy,#addcart{
-    background-color: white;
-    color: black;
+    margin-top: 8px;
+    width: 120px;
+    font-size: 15px;
+    font-weight: bolder;
+    border: solid black 2px;
+    padding: 10px 0;
+    color: white;
+    background-color: #000;
+    cursor: pointer;
 }
 #addcart:hover{
     background-color: gray;
@@ -147,23 +168,35 @@
     background-color: gray;
 }
 #up, #down {
+    width: 45px;
+    height: 45px;
+    line-height: 20px;
     text-align: center;
-    width: 50px;
-    background-color: #f4f1e8;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
     border: none;
 }
 #num{
+    width: 80px;
+    height: 40px;
+    line-height: 30px;
     text-align: center;
-    width: 100px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
     border: none;
+    background-color: white;
+    outline: none;
+    cursor: text;
 }
 
 #productiondescription{
-    grid-row: 4/5;
+    grid-row: 3/4;
     grid-column: 2/3;
     padding: 20px 20px 0 20px;
     border-radius: 20px ;
-    background-color: #f4f1e8 ;
+    background-color: white ;
 }
 /* ---------------------評價------------------------- */
 .discussion{
@@ -227,6 +260,8 @@
 }
 
 table{
+    padding: 20px;
+    border: solid black 2px;
     text-align: left;
     background-color:white;
     width: 400px;
