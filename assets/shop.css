@@ -85,10 +85,14 @@
 }
 /* -----------------------商品內容---------------------------- */
 #shop2{
+    box-sizing: border-box;
+    margin: 0 auto;
+    scroll-behavior: smooth;
     background-color: #f4f1e8;
 }
 /* ----------------------------------------------------- */
 .gotobuy{
+    text-align: center;
     padding: 20px 50px 20px 0px ;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -121,9 +125,22 @@
     grid-column: 2/3;
     cursor: pointer;
 }
+
 #buy,#addcart{
     background-color: white;
     color: black;
+}
+#addcart:hover{
+    background-color: gray;
+}
+#buy:hover{
+    background-color: gray;
+}
+#up:hover{
+    background-color: gray;
+}
+#down:hover{
+    background-color: gray;
 }
 #up, #down {
     text-align: center;
