@@ -35,8 +35,7 @@ function setItem(obj) {
     $('#productionprice').text('售價：$'+ obj.price);
     $("#num").val("0");
     $('#showimg').attr("src",'./image/'+ obj.img);
-    
-    // 將不同上方取得的物件的內容寫入對應的id之中 *$用以取得對應id位置
+// 將不同上方取得的物件的內容寫入對應的id之中 *$用以取得對應id位置
 } 
 function addListener() {
     let num = document.getElementById("num");
