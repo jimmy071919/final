@@ -297,7 +297,7 @@
     width: 180px;
     font-size: 15px;
     font-weight: bolder;
-    : solid blackborder 2px;
+    border: solid black 2px;
     padding: 10px 0;
     text-align: center;
     color: white;
