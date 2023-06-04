@@ -14,7 +14,7 @@ const shopitem1 = {
     6: {id:'6',name: '日本清酒', price: '25', img: 'sake.jpg'},
     7: {id:'7',name: '奶酒', price: '20', img: 'milkwine.jpg'},
     8: {id:'8',name: '草莓酒',  price: '15', img: 'strwine.jpg'},
-    9: {id:'9',name: '葡萄酒',  price: '15', img: 'gw.jpg'},
+    9: {id:'9',name: '希哈 紅葡萄酒',  price: '15', img: 'gw.jpg'},
     10: {id:'10',name: '米酒' , price: '15', img: 'ricewine.png'},
     11: {id:'11',name: '梅酒',  price: '15', img: 'plumwine.jpg'},
     12: {id:'12',name: 'liz酒',  price: '15', img: 'liz_2.jpg'},
@@ -24,6 +24,7 @@ const shopitem1 = {
     15: {id:'15',name: '女巫酒',  price: '15', img: 'witchwine.png'},
     16: {id:'16',name: '琴酒',  price: '15', img: 'jin.jpg'},
     17: {id:'17',name: '常常酒酒',  price: '15', img: 'liz.jpg'},
+    18: {id:'18',name: 'Provence Rose', price: '9000', img: 'rose.jpg'},
 };
 function generateItems() {
     let objLength = Object.keys(shopitem1).length;
