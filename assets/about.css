@@ -76,7 +76,9 @@
 .back {
     transform: rotateY(180deg);
     color: black;
-    background-color: bisque;
+    background-color: #e3dfd5;
+    border-radius: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
