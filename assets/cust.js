@@ -2,7 +2,7 @@
 window.onload=async function(){
     addListener();
     addCartListener();
-    addCatListener();
+    addCarListener();
 }
 
 // 上方購物車
