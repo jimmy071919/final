@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+
+.aboutus {
+    display: flex;
+    background-color: #f4f1e8;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.image_container {
+    perspective: 1000px;
+    margin: 50px auto;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    margin-bottom: 30px;
+    height: 300px;
+}
+
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+    line-height: 200px;
+
+}
+
+.front_hou {
+    border-radius: 20px;
+    width: 280px;
+    height: 280px;
+    align-items: center;
+
+}
+
+.front_tzu {
+    border-radius: 20px;
+    width: 300px;
+    height: 280px;
+    align-items: center;
+}
+
+.front_mao {
+    border-radius: 20px;
+    width: 280px;
+    height: 280px;
+}
+
+.front_tseng {
+    border-radius: 20px;
+    width: 270px;
+    height: 280px;
+    align-items: center;
+}
+
+.back {
+    transform: rotateY(180deg);
+    color: black;
+    border-radius: 20px;
+    background-color: bisque;
+    background-color: #e3dfd5;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back p {
+    text-align: left;
+    font-size: 18px;
+}
+
+.back img {
+    margin: auto;
+}
+
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image_container:hover .flipper,
+.image_container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.image_container h2 {
+    text-align: center;
+}
+
+.txt {
+    text-align: center;
+    font-size: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.visitus {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    color: #003566;
+    font-size: large;
+}
+
+.mapcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    max-width: 1000px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.map iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.feedback {
+    width: 500px;
+
+}
+
+.feedback h2 {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    color: #003566;
+    font-size: 20px;
+}
+
+.typetxt,
+textarea {
+    border: 1px solid black;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.botton {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+
+}
+
+.botton :hover {
+    background-color: #fbfbfb;
+    color: #226af1;
+    cursor: pointer;
+}
+
+span {
+    padding: 10px;
+}
+
+.bottonto {
+    background-color: #f4f1e8;
+    color: #003566;
+    border: none;
+    line-height: 1cm;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
