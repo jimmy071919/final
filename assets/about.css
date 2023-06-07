@@ -121,12 +121,12 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.visitus {
+.visitus h2{
     text-align: center;
     margin: 10px;
     padding: 10px;
     color: #003566;
-    font-size: large;
+    font-size: 20px;
 }
 
 .mapcontainer {
