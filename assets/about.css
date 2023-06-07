@@ -159,10 +159,29 @@
 
 .feedback h2 {
     text-align: center;
-    margin: 10px;
-    padding: 10px;
+    margin-top: 10px;
+    margin-bottom:5px;
     color: #003566;
     font-size: 20px;
+}
+
+.contactinfo {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+}
+
+.contactinfoimg {
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.contactinfotxt {
+    margin-right: 10px;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 .typetxt,
