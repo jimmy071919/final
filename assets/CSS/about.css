@@ -23,7 +23,7 @@
 }
 
 
-
+/* 有旋轉卡片的效果 */
 .flipper {
     transition: 0.6s;
     transform-style: preserve-3d;
@@ -32,7 +32,7 @@
     height: 300px;
 }
 
-
+/* 游標還沒碰上照片的時候顯示的第一個畫面 */
 .front {
     z-index: 2;
     transform: rotateY(0deg);
@@ -72,6 +72,7 @@
     align-items: center;
 }
 
+/* 游標還碰上照片的時候顯示的第二個畫面 */
 .back {
     transform: rotateY(180deg);
     color: black;
@@ -106,6 +107,7 @@
     height: 100%;
 }
 
+/* 游標碰上區塊後，照片會往橫軸方向轉180度 */
 .image_container:hover .flipper,
 .image_container.hover .flipper {
     transform: rotateY(180deg);
@@ -121,12 +123,18 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.visitus {
+.visitus h2{
     text-align: center;
-    margin: 10px;
-    padding: 10px;
+    margin-top: 20px;
+    padding-bottom: 5px;
     color: #003566;
-    font-size: large;
+    font-size: 20px;
+}
+
+.visitus pre {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .mapcontainer {
@@ -145,6 +153,7 @@
     height: 100%;
 }
 
+/* 用transform讓地圖可以直接顯示大頭針在畫面中央 */
 .map iframe {
     position: absolute;
     top: 50%;
@@ -159,10 +168,29 @@
 
 .feedback h2 {
     text-align: center;
-    margin: 10px;
-    padding: 10px;
+    margin-top: 10px;
+    margin-bottom:5px;
     color: #003566;
     font-size: 20px;
+}
+
+.contactinfo {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+}
+
+.contactinfoimg {
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.contactinfotxt {
+    margin-right: 10px;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 .typetxt,
