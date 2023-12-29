@@ -65,6 +65,7 @@
             %>
 
             <%
+                
                 if(session.isNew()) {
                     num_c++;
                     application.setAttribute("guestnum", num_c);
