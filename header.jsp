@@ -59,14 +59,18 @@
             <a class="bar" href="./customized.jsp">CUSTOMIZED</a>&emsp;
             <a class="bar" href="./about.jsp">ABOUT US</a>
 
-            <%  
-                int num_c = (int)application.getAttribute("guestnum");
+            <%
+                Integer num_c_obj = (Integer) application.getAttribute("guestnum");
+                int num_c = (num_c_obj != null) ? num_c_obj.intValue() : 0;
+            %>
 
+            <%
                 if(session.isNew()) {
                     num_c++;
                     application.setAttribute("guestnum", num_c);
                 }
             %>
+
 
             <div class="num">你是第<%= num_c %>個拜訪網站的人</div> 
 
