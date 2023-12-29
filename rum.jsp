@@ -1,59 +1,34 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>龍舌蘭🍸</title>
+    <title>蘭姆酒🍸</title>
     <link rel="stylesheet" href="assets/CSS/header.css"> 
     <link rel="stylesheet" href="assets/CSS/customized.css">
     <link rel="icon" href="image/logo.ico" type="image/x-icon"> 
-    <script src="assets/JS/cust.js"></script>  
+    <script src="assets/JS/cust.js"></script> 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
-    <header>
-        <div id="Top"></div>
-        <div class="logo">
-            <img src="image/logo.png" style="width:120px;height:150px" >
-        </div> 
-        <div class="login">
-            <a href="./login.html"><img src="image/login.png" style="width:60px;height:60px"></a>
-        </div> 
-        <div class="accpic">
-            <a href="./account.html"><img src="image/account.png" style="width:50px;height:50px"></a>
-        </div>
-        <div class="car">
-            <a href="./car.html"><img src="image/shop.png" style="width:50px;height:50px" ></a>
-        </div>
-    </header> 
-    <div class="backtotop">
-        <a href="#Top" title="回到最上方">
-            <img src="image/top.png">
-        </a>
-    </div>
-    <nav>
-        <a href="./index.html">HOME</a>&emsp;
-        <a href="./shop.html">SHOP</a>&emsp;
-        <a href="./customized.html">CUSTOMIZED</a>&emsp;
-        <a href="./about.html">ABOUT US</a>
-    </nav>
-    
+    <%@include file = "header.jsp" %>
     <article class="customized">
         <div class="wine1">
             <div class="item1">
-                <img src="image/mar.jpg">
+                <img src="image/moji.jpg">
             </div>
             <div class="pro">
                 <div class="price">
-                    瑪格麗特 Margarita <br>
+                    莫西多 Mojito <br>
                     NT$350 <br>
                 </div>
                 <div class="cont">
-                    是一種用龍舌蘭酒配製的雞尾酒，<br><br>
-                    主要以龍舌蘭酒、檸檬汁和君度橙皮酒，<br><br>
-                    其杯口上通常有一層細鹽，<br><br>
-                    在炎熱的夏季適合作為餐前酒。
+                    夏天必備的雞尾酒，<br><br>
+                    清爽解渴的莫西多，<br><br>
+                    清爽沁涼的口感，<br><br>
+                    成為炎炎夏日最受歡迎的雞尾酒!
                 </div>
                 <div class="math">
                     數量: <br>
@@ -75,18 +50,18 @@
         </div>
         <div class="wine1">
             <div class="item1">
-                <img src="image/sun.jpg">
+                <img src="image/pine.jpg">
             </div>
             <div class="pro">
                 <div class="price">
-                    龍舌蘭日出 Tequila Sunrise <br>
+                    鳳梨可樂達 Pinacolada <br>
                     NT$300 <br>
                 </div>
                 <div class="cont">
-                    以少量龍舌蘭酒加大量鮮橙汁佐以紅石榴糖漿調製而成，<br><br>
-                    夏季特飲，色彩艷麗鮮明，<br><br>
-                    由黃逐步到紅，像日出時天空的顏色，<br><br>
-                    極具賣相。
+                    一款甜雞尾酒，<br><br>
+                    一般由蘭姆酒、椰漿和鳳梨汁混合攪拌，<br><br>
+                    或者加冰塊搖晃調製，<br><br>
+                    通常用鳳梨角、馬拉斯奇諾櫻桃裝飾。
                 </div>
                 <div class="math">
                     數量: <br>
@@ -135,9 +110,7 @@
             </div>    
         </div>
     </article>
-
-
-
+    
     <footer>
         Copyright
         <sup>©</sup>

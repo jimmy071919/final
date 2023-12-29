@@ -17,10 +17,18 @@ header{
     background-color: #fcfcfc;
 }
 
+.username{
+    float: right;
+    margin-right: 170px;
+    margin-top: -55px;
+
+}
+
 .logo{
     text-align: center;
     margin-top: 50px;
 }
+
 
 .login{
     float: right;
@@ -57,6 +65,13 @@ nav a{
     display: inline-block;
     /* inline-block連結成一列 */
     text-decoration: none;
+}
+
+nav .num {
+    display: inline-block;
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 15px;
 }
 
 nav a:hover{

@@ -1,53 +1,35 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>琴酒🍸</title>
-    <link rel="icon" href="image/logo.ico" type="image/x-icon">
+    <title>威士忌🍸</title>
     <link rel="stylesheet" href="assets/CSS/header.css"> 
-    <link rel="stylesheet" href="assets/CSS/customized.css"> 
-    <script src="assets/JS/cust.js"></script> 
+    <link rel="stylesheet" href="assets/CSS/customized.css">
+    <link rel="icon" href="image/logo.ico" type="image/x-icon"> 
+    <script src="assets/JS/cust.js"></script>  
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
-    <header>
-        <div id="Top"></div>
-        <div class="logo">
-            <img src="image/logo.png" style="width:120px;height:150px" >
-        </div> 
-        <div class="car">
-            <a href="./car.html"><img src="image/shop.png" style="width:50px;height:50px" ></a>
-        </div>
-    </header> 
-    <div class="backtotop">
-        <a href="#Top" title="回到最上方">
-            <img src="image/top.png">
-        </a>
-    </div>
-    <nav>
-        <a href="./index.html">HOME</a>&emsp;
-        <a href="./shop.html">SHOP</a>&emsp;
-        <a href="./customized.html">CUSTOMIZED</a>&emsp;
-        <a href="./about.html">ABOUT US</a>
-    </nav>
-    
+    <%@include file = "header.jsp" %>
+
     <article class="customized">
         <div class="wine1">
             <div class="item1">
-                <img src="image/ton.jpg">
+                <img src="image/screw.jpg">
             </div>
             <div class="pro">
                 <div class="price">
-                    琴通寧 Gin Tonic <br>
-                    NT$250 <br>
+                    螺絲起子 Screwdriver <br>
+                    NT$300 <br>
                 </div>
                 <div class="cont">
-                    由琴酒和奎寧水調製而成的高球雞尾酒，<br><br>
-                    配方常見的比例在1:1到1:3之間，<br><br>
-                    配製時還會加入一小塊青檸加以添飾，<br><br>
-                    加入冰塊使入口更加柔和，風味更加宜人。
+                    是一款用橙汁和伏特加調製的高球雞尾酒，<br><br>
+                    將所有材料加入冰塊六分滿的高球杯中，<br><br>
+                    攪拌均勻即可，<br><br>
+                    裝飾物可以使用柳橙做裝飾。
                 </div>
                 <div class="math">
                     數量: <br>
@@ -69,18 +51,18 @@
         </div>
         <div class="wine1">
             <div class="item1">
-                <img src="image/neg.jpg">
+                <img src="image/cosmo.jpg">
             </div>
             <div class="pro">
                 <div class="price">
-                    內格羅尼 Negroni <br>
+                    柯夢波丹 Cosmopolitan <br>
                     NT$350 <br>
                 </div>
                 <div class="cont">
-                    是一種流行的義大利雞尾酒 ，<br><br>
-                    由琴酒、甜紅苦艾酒和金巴利組成，<br><br>
-                    使用的點綴物是橙皮，<br><br>
-                    是一種開胃酒。
+                    又稱大都會雞尾酒，<br><br>
+                    最受女生喜愛的經典調酒，<br><br>
+                    蔓越莓與檸檬混合而成的粉紅色，<br><br>
+                    喝起來酸酸甜甜卻又不失酒味。
                 </div>
                 <div class="math">
                     數量: <br>

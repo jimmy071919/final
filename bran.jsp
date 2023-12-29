@@ -1,59 +1,35 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>伏特加🍸</title>
+    <title>白蘭地🍸</title>
+    <link rel="icon" href="image/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/CSS/header.css"> 
-    <link rel="stylesheet" href="assets/CSS/customized.css">
-    <link rel="icon" href="image/logo.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="assets/CSS/customized.css"> 
     <script src="assets/JS/cust.js"></script> 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
-    <header>
-        <div id="Top"></div>
-        <div class="logo">
-            <img src="image/logo.png" style="width:120px;height:150px" >
-        </div> 
-        <div class="login">
-            <a href="./login.html"><img src="image/login.png" style="width:60px;height:60px"></a>
-        </div> 
-        <div class="accpic">
-            <a href="./account.html"><img src="image/account.png" style="width:50px;height:50px"></a>
-        </div>
-        <div class="car">
-            <a href="./car.html"><img src="image/shop.png" style="width:50px;height:50px" ></a>
-        </div>
-    </header> 
-    <div class="backtotop">
-        <a href="#Top" title="回到最上方">
-            <img src="image/top.png">
-        </a>
-    </div>
-    <nav>
-        <a href="./index.html">HOME</a>&emsp;
-        <a href="./shop.html">SHOP</a>&emsp;
-        <a href="./customized.html">CUSTOMIZED</a>&emsp;
-        <a href="./about.html">ABOUT US</a>
-    </nav>
+    <%@include file = "header.jsp" %>
     
     <article class="customized">
         <div class="wine1">
             <div class="item1">
-                <img src="image/soda.jpg">
+                <img src="image/side.jpg">
             </div>
             <div class="pro">
                 <div class="price">
-                    威士忌蘇打 Whisky Soda <br>
-                    NT$250 <br>
+                    側車 Sidecar <br>
+                    NT$300 <br>
                 </div>
                 <div class="cont">
-                    是一種烈性的雞尾酒，<br><br>
-                    由威士忌及通寧水或蘇打水混合而成，<br><br>
-                    再加入冰塊，<br><br>
-                    也可以加一點檸檬作為提味及裝飾。
+                    最知名的白蘭地調酒，<br><br>
+                    以搖盪法均勻搖盪調製，<br><br>
+                    最後濾掉冰塊倒入雞尾酒杯中，<br><br>
+                    以橙皮作為裝飾。
                 </div>
                 <div class="math">
                     數量: <br>
@@ -75,18 +51,18 @@
         </div>
         <div class="wine1">
             <div class="item1">
-                <img src="image/rust.jpg">
+                <img src="image/mint.jpg">
             </div>
             <div class="pro">
                 <div class="price">
-                    鏽釘 Rusty Nail <br>
+                    薄荷朱利普 Mint Julep <br>
                     NT$350 <br>
                 </div>
                 <div class="cont">
-                    加入蘇格蘭威士忌和吉寶香甜酒 ，<br><br>
-                    1:1的比例，<br><br>
-                    放滿晶瑩剔透的冰塊即可。<br><br>
-                    是款帶著蜂蜜的香甜、豐富而細膩的威士忌調酒。
+                    18世紀左右開始出現加入琴酒、威士忌、<br><br>
+                    蘭姆酒、白蘭地等不同基酒版本的Julep，<br><br>
+                    加入大量碎冰與薄荷葉，<br><br>
+                    是最重要的共同特色。
                 </div>
                 <div class="math">
                     數量: <br>
@@ -122,7 +98,7 @@
                         <tr><td>名稱: Kim Chaewon</td></tr>
                         <tr><td>發布時間: 2023/08/01</td></tr>
                         <tr><td>內容 : 好喝一直喝!😎</td></tr>
-                        <tr><td>———————————————<td></tr>
+                        <tr><td>———————————————</td></tr>
                         <tr><td>名稱: An Yujin</td></tr>
                         <tr><td>發布時間: 2023/09/01</td></tr>
                         <tr><td>內容 : 辣到我的lips都腫起來了🥵</td></tr>
@@ -141,5 +117,6 @@
         <sup>©</sup>
         2023 by 卡拉雞尾酒🍸
     </footer>
+    
 </body>
 </html>

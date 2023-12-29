@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,32 +11,7 @@
     <link rel="stylesheet" href="assets/CSS/customized.css"> 
 </head>
 <body>
-    <header>
-        <div id="Top"></div>
-        <div class="logo">
-            <img src="image/logo.png" style="width:120px;height:150px" >
-        </div> 
-        <div class="login">
-            <a href="./login.html"><img src="image/login.png" style="width:60px;height:60px"></a>
-        </div> 
-        <div class="accpic">
-            <a href="./account.html"><img src="image/account.png" style="width:50px;height:50px"></a>
-        </div>
-        <div class="car">
-            <a href="./car.html"><img src="image/shop.png" style="width:50px;height:50px" ></a>
-        </div>
-    </header> 
-    <div class="backtotop">
-        <a href="#Top" title="回到最上方">
-            <img src="image/top.png">
-        </a>
-    </div>
-    <nav>
-        <a href="./index.html">HOME</a>&emsp;
-        <a href="./shop.html">SHOP</a>&emsp;
-        <a href="./customized.html">CUSTOMIZED</a>&emsp;
-        <a href="./about.html">ABOUT US</a>
-    </nav>  
+    <%@include file = "header.jsp" %>
 
     <article class="customized">
         <section class="cust">
