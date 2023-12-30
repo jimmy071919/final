@@ -14,6 +14,20 @@
 </head>
 <body>
     <%@include file = "header.jsp" %>
+    <%
+
+        if(cookies != null){
+            for(int i = 0; i < cookies.length; i++){
+                if(cookies[i].getName().equals("name")){
+                    break ; 
+                }
+                else
+                {
+                    response.sendRedirect("login.jsp");
+                }
+            }
+        }
+    %>
     <article class="gocar">
         <section class="carleft">
             <div class="order">
@@ -136,10 +150,6 @@
 
     </article>
 
-    <footer>
-        Copyright
-        <sup>©</sup>
-        2023 by 卡拉雞尾酒🍸
-    </footer>  
+    <%@include file = "footer.jsp" %>
 </body>
 </html>

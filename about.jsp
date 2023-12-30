@@ -72,42 +72,7 @@
             </div>
         </div>
 
-        <div class="image_container">
-            <div class="flipper">
-                <!--曾-->
-                <div class="front">
-                    <img class="front_tseng" src="image/tseng_photo.jpg" alt="曾宇璿照片">
-                </div>
-                    
-                <div class="back"> 
-                    <p>
-                        "@20TsengJ加我IG"
-                    </p>
-                    <img src="image/logo.png" width="70px">
-                </div>
-            </div>
-            <h2>曾宇璿 | 11044138</h2>
-            <div class="txt">
-                <h4>資管三甲</h4>
-            </div>
-        </div>
-
-        <div class="image_container">
-            <div class="flipper">
-                <!--黃-->
-                <div class="front">
-                    <img class="front_huang" src="image/huang_photo.jpg" alt="黃恆嘉照片">
-                </div>
-                    
-                <div class="back">
-                    <p>"切一半和切兩半是一樣意思"</p>
-                    <img src="image/logo.png" width="70px">
-                </div>
-            </div>
-            <h2>黃恆嘉 | 11044145</h2>
-            <div class="txt">
-                <h4>資管三甲</h4>
-            </div>
+        
         </div>
     </section>
 
@@ -137,18 +102,12 @@
             <input type="text" id="name" class="typetxt" placeholder="Name">
             <input type="text" id="Email" class="typetxt" placeholder="Email">
             <textarea name="content" id="content" cols="30" rows="10" placeholder="Type your message here..."></textarea>
-        </form>
-        <div class="botton">
             <input type="submit" class="bottonto" value="SUBMIT">
             <span></span>
             <input type="reset" class="bottonto" value="CANCEL">
-        </div>
+        </form>
     </section>
     
-    <footer>
-        CopyRight  
-        <sup>©</sup>
-         2023 by 卡拉雞尾酒🍸  
-    </footer>
+    <%@include file = "footer.jsp" %>
 </body>
 </html>

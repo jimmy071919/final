@@ -12,15 +12,16 @@
 </head>
 <body>
   <%@include file = "header.jsp" %>
+  
 
   <div class="member-info">
     <div class="member-in">
       <h2>會員資料<img src="image/haewon.jpg" class="haewon"></h2>  
         <div class="info">
-          姓名:&nbsp;吳海嫄<br><br>
-          帳號:&nbsp;NSWER <br><br>
-          生日:&nbsp;2003/2/25 <br><br>
-          Email:&nbsp;haewonnmixx@gmail.com <br><br>
+          姓名:&nbsp;<br><br>
+          帳號:&nbsp; <br><br>
+          生日:&nbsp;<br><br>
+          Email:&nbsp;<br><br>
         </div>
     </div>
   
@@ -76,11 +77,7 @@
     </div>
   </div>
     
-  <footer>
-    Copyright
-    <sup>©</sup>
-    2023 by 卡拉雞尾酒🍸
-  </footer>
+  <%@include file = "footer.jsp" %>
 
 </body>
 </html>

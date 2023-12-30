@@ -27,10 +27,6 @@
     </div>
 
 
-    <footer>
-        Copyright
-        <sup>©</sup>
-        2023 by 卡拉雞尾酒🍸
-    </footer>   
+    <%@include file = "footer.jsp" %>
 </body>
 </html>

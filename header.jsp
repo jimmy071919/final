@@ -40,6 +40,10 @@
                 }
             }
         }
+        else 
+        {
+            out.print("<div class='login'><a href='./login.jsp'><img src='image/login.png' style='width:60px;height:60px'></a></div> ");
+        }
         %>
         <div class="accpic">
             <a href="./account.jsp"><img src="image/account.png" style="width:50px;height:50px"></a>
@@ -65,7 +69,7 @@
             %>
 
             <%
-                
+
                 if(session.isNew()) {
                     num_c++;
                     application.setAttribute("guestnum", num_c);
