@@ -8,7 +8,35 @@
     display: flex;
     margin: 100px;
 }
-.button
-{
-    
+.button1 a,
+.button2 a,
+.button3 a,
+.button4 a,
+.button5 a{
+    text-decoration: none;
+    font-family: 'Noto Sans TC', sans-serif;;
+    font-size:  20px;; 
 }
+*[class*="button"] 
+{
+    border-width: 100px;
+} 
+
+a[name="tab"]
+{
+    border-width: 3px 65px;
+    border-style:solid;
+    border-color: #d6d6d5; 
+    background:#d6d6d5;
+    border-radius: 10px;
+    color: rgb(79, 66, 15);
+    transition: .4s ease-in;
+}
+a[name="tab"]:hover
+{
+    border-width: 4px 75px;
+    border-style:solid;
+    border-color: #cedbd8; 
+    background:#cedbd8;
+    color:rgb(124, 124, 29);
+} 

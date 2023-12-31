@@ -12,16 +12,14 @@
     <%@include file = "header.jsp" %>
  
     <div class="container">
-        
-        <div class="button"> <a href="addnew.jsp">add</a> </div>
- 
-        <div  class="button">  <a href="modify.jsp"> 修改</a> </div>
+        <div class="button1" > <a href="addnew.jsp"  name="tab"> 新增</a> </div>
+        <div  class="button2"> <a href="modify.jsp"  name="tab"> 修改</a> </div>
    
-        <div  class="button"> <a href="order.jsp">訂單 </a>  </div>
+        <div  class="button3"> <a href="order.jsp" name="tab">訂單 </a>  </div>
        
-        <div  class="button"><a href="onshelf.jsp">上架</a> </div>
+        <div  class="button4"><a href="onshelf.jsp"  name="tab">上架</a> </div>
         
-        <div  class="button"> <a href="discount.jsp">優惠</a> </div>
+        <div  class="button5"> <a href="discount.jsp"  name="tab">優惠</a> </div>
 
     </div>
     <%@include file = "footer.jsp" %>
