@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* scroll-behavior: smooth; */
+}
+.container
+{
+    display: flex;
+    margin: 100px;
+}
+.button
+{
+    
+}
