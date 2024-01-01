@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    /* background-color: #f4f1e8; */
+}
+
+.title
+{
+    display: flex;
+    margin-top: 15px;
+    background-color: #f4f1e8;
+}
+h1{
+    font-weight: normal;
+}
+.container
+{
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center; /* 元素在主軸上居中對齊 */
+    margin-top: 15px;
+    width: 1150px;
+    height: auto;
+
+}
+
+h2{
+    font-weight: normal;
+    margin-bottom: 10px;
+
+    text-align: center;
+
+}
+input, label {
+    margin-bottom: 20px;
+}
+.info2
+{
+    text-align: center;
+}
+.setup
+{
+    text-align: center;
+}
+.a{
+
+    text-decoration: none;
+    font-size: 14px;
+    appearance: auto;
+    user-select: none;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    color: buttontext;
+    white-space: pre;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 1px;
+    border-radius: 1.5px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+.a:hover{
+    background-color: rgb(229, 227, 227)  ;
+}
+
+
+.a {
+   margin-right: 15px;
+}
