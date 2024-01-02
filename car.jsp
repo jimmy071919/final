@@ -143,7 +143,7 @@
                     <p><div>總計</div>&emsp;<div>$1060</div></p>
                 </div>
                 <div class="pay">
-                    <input type="submit" value="結帳">
+                    <a href="fill_order.jsp">結帳</a>
                 </div>
             </form>
 
