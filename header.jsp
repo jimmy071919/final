@@ -33,12 +33,11 @@
                     out.print("歡迎" + name);
                     out.print("</a>");
                 }
-
-                if (name.equals(""))
+            }
+            if (name.equals(""))
                 {
                     out.print("<div class='login'><a href='./login.jsp'><img src='image/login.png' style='width:60px;height:60px'></a></div> ");
                 }
-            }
         }
         else 
         {
@@ -78,7 +77,7 @@
 
 
             <div class="num">你是第<%= num_c %>個拜訪網站的人</div> 
-            <a href="backend_login.jsp">後臺管理</a>
+            <a  href="backend_login.jsp">後臺管理</a>
 
         </nav>
 </body>

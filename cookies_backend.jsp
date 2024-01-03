@@ -28,11 +28,11 @@
 
     strname = URLEncoder.encode(strname, "UTF-8"); // Cookie中文編碼
 
-    Cookie nameCookie = new Cookie("name_b", strname);
-    Cookie passwordCookie = new Cookie("password_b", strpassword);
+    Cookie nameCookie_b = new Cookie("name_b", strname);
+    Cookie passwordCookie_b = new Cookie("password_b", strpassword);
 
-    response.addCookie(nameCookie);
-    response.addCookie(passwordCookie);
+    response.addCookie(nameCookie_b);
+    response.addCookie(passwordCookie_b);
     %>
 
     <!-- 其他 body 內容... -->
