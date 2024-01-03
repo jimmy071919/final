@@ -10,30 +10,23 @@
 </head>
 <body>
     <%@include file = "header.jsp" %>
-    
-    <%
-        boolean foundNameB = false;
-        if(cookies != null){
-            for(int i = 0; i < cookies.length; i++){
-                if(cookies[i].getName().equals("name_b")){
-                    foundNameB = true;
-                    break;
-                }
-            }
-        }
-
-        if (!foundNameB) {
-            response.sendRedirect("backend_login.jsp");
-        }
-    %>
     <div class="title">
         <h1 >新增商品</h1>
         </div>
-        <!-- 優惠券設定 -->
-    <form method="post" action="">
-        <div class="container">
+    <div class="container1">
             <div class="info">
                 <h2>商品名稱</h2>
+                <!-- 上傳圖片 -->
+                <Form class="picture">
+                    <div>
+                        <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png"   style="position:absolute;height:25px;width:200px;">
+                    </div>
+                    <br>
+                    <div> </div>
+                </Form>
+            
+                <!-- 新增商品 -->
+                <form method="post" action=" ">
                 <div class="info2">
                     類別 
                     <select name="product_type" id="">
@@ -41,23 +34,28 @@
                         <option value="2">釀造酒</option>
                         <option value="3">合成酒</option>
                     </select>
-
-
                     <br>
-                    商品代碼 <input type="number">
-                    商品描述 <input type="text" name="product_name" value=" " size="30" maxlength="30">
+                    商品代碼 <input type="text"name="product_id"   size="30" maxlength="5">
                     <br>
-                </div>
+                    商品描述 
+                    <br>
+                    <textarea  name="product_description" rows="20" cols="100" > 請輸入商品描述 </textarea>
+                         
+                    </div>
             </div>
             <div>
                 <input type="submit" value="儲存">
                 <a href="backend.jsp" class="a">取消</a>
             </div>
-        </div>
-    </form>
-
+        </form>
+    </div>
+    
+    <br>
+    
 
     <!-- <a href="footer.jsp"></a> -->
+    <%@include file = "cookies_backend_verify.jsp" %>
+    
     <%@include file = "footer.jsp" %>
 
 </body>

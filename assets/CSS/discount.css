@@ -14,6 +14,16 @@
 h1{
     font-weight: normal;
 }
+
+form{
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center; /* 元素在主軸上居中對齊 */
+    margin-top: 15px;
+    width: 1150px;
+    height: auto;
+}
+
 .container
 {
     display: flex;
