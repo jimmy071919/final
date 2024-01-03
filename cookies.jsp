@@ -9,7 +9,7 @@
         function redirectToIndex() {
             setTimeout(function(){
                 window.location.href = 'http://localhost:8080/final/index.jsp';
-            }, 2000); // 2000 毫秒等於 2 秒
+            }, 1000); // 2000 毫秒等於 2 秒
         }
 
         // 調用函數

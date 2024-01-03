@@ -14,22 +14,8 @@
 </head>
 <body>
     <%@include file = "header.jsp" %>
-    <%
-        boolean foundNameB = false;
-
-        if(cookies != null){
-            for(int i = 0; i < cookies.length; i++){
-                if(cookies[i].getName().equals("name")){
-                    foundNameB = true;
-                    break;
-                }
-            }
-        }
-
-        if (!foundNameB) {
-            response.sendRedirect("login.jsp");
-        }
-    %>
+    
+    <%@include file = "cookies_verify.jsp" %>
 
     <article class="gocar">
         <section class="carleft">
