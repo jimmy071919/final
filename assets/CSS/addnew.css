@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     scroll-behavior: smooth;
     /* background-color: #f4f1e8; */
 }
@@ -14,44 +14,39 @@
 h1{
     font-weight: normal;
 }
-
-form{
-    display: flex;
-    flex-direction: column; /* 垂直排列子元素 */
-    align-items: center; /* 元素在主軸上居中對齊 */
-    margin-top: 15px;
-    width: 1150px;
-    height: auto;
-}
-
-.container
+.container1
 {
     display: flex;
-    flex-direction: column; /* 垂直排列子元素 */
+    flex-direction: column;
     align-items: center; /* 元素在主軸上居中對齊 */
-    margin-top: 15px;
-    width: 1150px;
-    height: auto;
-
 }
+.info {
+    flex-direction: column;
+    align-items: center; /* 將子元素水平置中對齊 */
+}
+form
+{
+    margin-bottom: 10px;
+}
+
 
 h2{
     font-weight: normal;
+    margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
+    align-items: center;
 
-    text-align: center;
+}
 
+.info2 input {
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
-input, label {
-    margin-bottom: 20px;
-}
-.info2
+.info2 select
 {
-    text-align: center;
-}
-.setup
-{
-    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .a{
 
