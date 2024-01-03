@@ -9,11 +9,22 @@
     <link rel="icon" href="image/logo.ico" type="image/x-icon">
 </head>
 <body>
-    <%@include file = "header.jsp" %>
+    <%
 
-    <%@include file = "cookies_backend_verify.jsp" %>
+        boolean foundNameB = false;
 
-    <%@include file = "footer.jsp" %>
+        if(cookies != null){
+            for(int i = 0; i < cookies.length; i++){
+                if(cookies[i].getName().equals("name_b")){
+                    foundNameB = true;
+                    break;
+                }
+            }
+        }
 
+        if (!foundNameB) {
+            response.sendRedirect("backend_login.jsp");
+        }
+    %>
 </body>
 </html>

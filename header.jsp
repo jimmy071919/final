@@ -75,9 +75,11 @@
                 }
             %>
 
-
+            <div></div>
+            <div></div>
+            <a class="backend" href="backend_login.jsp">後臺管理</a>
             <div class="num">你是第<%= num_c %>個拜訪網站的人</div> 
-            <a  href="backend_login.jsp">後臺管理</a>
+            
 
         </nav>
 </body>
