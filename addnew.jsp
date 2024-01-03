@@ -39,7 +39,7 @@
                     <br>
                     商品描述 
                     <br>
-                    <textarea  name="product_description" rows="20" cols="100" > 請輸入商品描述 </textarea>
+                    <textarea  name="product_description" rows="20" cols="100" placeholder="請輸入商品描述" ></textarea>
                          
                     </div>
             </div>
@@ -51,7 +51,7 @@
     </div>
     
     <br>
-    
+
 
     <!-- <a href="footer.jsp"></a> -->
     <%@include file = "cookies_backend_verify.jsp" %>
