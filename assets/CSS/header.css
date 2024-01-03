@@ -64,7 +64,7 @@ nav a{
     padding: 20px 20px;
     display: inline-block;
     /* inline-block連結成一列 */
-    text-decoration: none;
+    text-decoration: none;;
 }
 
 nav .num {
@@ -90,6 +90,20 @@ nav a:hover{
 .backtotop img{
     width: 40px;
     height: 40px;
+}
+
+.bar_s{
+    position: absolute;
+    top: 4px;
+    right: 10px;
+}
+
+.backend{
+    font-size: 15px;
+}
+
+.num{
+    float: right;
 }
 
 footer {

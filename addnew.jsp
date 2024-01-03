@@ -11,25 +11,8 @@
 <body>
     <%@include file = "header.jsp" %>
     
-    <%
-
-        boolean foundNameB = false;
-
-        if(cookies != null){
-            for(int i = 0; i < cookies.length; i++){
-                if(cookies[i].getName().equals("name_b")){
-                    foundNameB = true;
-                    break;
-                }
-            }
-        }
-
-        if (!foundNameB) {
-            response.sendRedirect("backend_login.jsp");
-        }
-    %>
-
-    <!-- <a href="footer.jsp"></a> -->
+    <%@include file = "cookies_backend_verify.jsp" %>
+    
     <%@include file = "footer.jsp" %>
 
 </body>

@@ -6,37 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>卡拉雞尾酒🍸</title>
     <link rel="stylesheet" href="assets/CSS/backend.css"> 
+    <link rel="stylesheet" href="assets/CSS/fill_order.css">
     <link rel="icon" href="image/logo.ico" type="image/x-icon">
 </head>
 <body>
     <%@include file = "header.jsp" %>
 
-    <%
-        boolean foundNameB = false;
+    <%@include file = "cookies_verify.jsp" %>
 
-        if(cookies != null){
-            for(int i = 0; i < cookies.length; i++){
-                if(cookies[i].getName().equals("name")){
-                    foundNameB = true;
-                    break;
-                }
-            }
-        }
-
-        if (!foundNameB) {
-            response.sendRedirect("login.jsp");
-        }
-    %>
-    <form action="">
-        姓名:<input type="text" name="name" >
-        <br>
-        地址:<input type="text" name="address" >
-        <br>
-        電話號碼:<input type="text" name="number" >
-        <br>
-        電子郵件:<input type="email" name="email" >
-
-    </form>
+    <div class="order">
+        <p>寄件資料</p>
+        <form action="">
+            姓名:<input type="text" name="name" >
+            <br>
+            地址:<input type="text" name="address" >
+            <br>
+            電話號碼:<input type="text" name="number" >
+            <br>
+            電子郵件:<input type="email" name="email" >
+            <br>
+            <input type="submit" value="送出">
+            <input type="reset" value="重填">
+        </form>
+    </div>
     <%@include file = "footer.jsp" %>
 
 </body>

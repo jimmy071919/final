@@ -15,6 +15,8 @@
 </head>
 <body>
 <%@include file = "header.jsp" %>
+
+<%@include file = "cookies_backend_verify.jsp" %>
     <div class="title">
         <h1 >建立優惠券</h1>
         </div>
