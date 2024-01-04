@@ -39,6 +39,19 @@
         </div>
     </article>
 
+    
+    <%
+    request.setCharacterEncoding("UTF-8");
+    String[] selectedProductIds = request.getParameterValues("selectedProducts");
+        if (selectedProductIds != null) {
+            for (String productName : selectedProductIds) {
+                out.println("已選中的產品：" + productName);
+            }
+        } else {
+            out.println("未選擇任何產品。");
+        }
+    %>
+    
     <%@include file = "footer.jsp" %>
 </body>
 </html> 
