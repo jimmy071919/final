@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import = "java.sql.*" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,16 +27,21 @@
                 </Form>
             
                 <!-- 新增商品 -->
-                <form method="post" action=" ">
+                <form method="post" action="addDB.jsp">
                 <div class="info2">
                     類別 
-                    <select name="product_type" id="">
+                    <select name="category" id="">
                         <option value="1">蒸餾酒</option>
                         <option value="2">釀造酒</option>
                         <option value="3">合成酒</option>
                     </select>
                     <br>
                     商品代碼 <input type="text"name="product_id"   size="30" maxlength="5">
+                    <br>
+                    商品名稱 <input type="text" name="product_name" size="30" maxlength="10">
+                    數量 <input type="number" name="amount" min="1" placeholder="個" style="width: 5em;">
+                    <br>
+                    價錢 <input type="number" name="price" size="15" maxlength="20" min="1" placeholder="NT">
                     <br>
                     商品描述 
                     <br>
@@ -51,11 +57,8 @@
     </div>
     
     <br>
-
-
     <!-- <a href="footer.jsp"></a> -->
     <%@include file = "cookies_backend_verify.jsp" %>
-    
     <%@include file = "footer.jsp" %>
 
 </body>
