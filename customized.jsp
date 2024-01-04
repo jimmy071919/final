@@ -27,7 +27,7 @@
         </div>
         <div class="wine">
             <div class="item">
-                <a href="./te.html" class="te">
+                <a href="./te.jsp" class="te">
                     <img src="image/tequila.jpg">
                     <div class="text">
                     瀏覽更多
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="item">
-                <a href="./vod.html" class="vod">
+                <a href="./vod.jsp" class="vod">
                     <img src="image/vodka.jpg">
                     <div class="votext">
                     瀏覽更多
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="item">
-                <a href="./gin.html" class="gin">
+                <a href="./gin.jsp" class="gin">
                     <img src="image/gin.jpg">
                     <div class="gintext">
                         瀏覽更多
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="item">
-                <a href="./bran.html" class="bran">
+                <a href="./bran.jsp" class="bran">
                     <img src="image/brandy.jpg">
                     <div class="brantext">
                         瀏覽更多
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="item">
-                <a href="./whisk.html" class="whisk">
+                <a href="./whisk.jsp" class="whisk">
                     <img src="image/whisky.jpg">
                     <div class="whistext">
                         瀏覽更多
@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="item">
-                <a href="./rum.html" class="rum">
+                <a href="./rum.jsp" class="rum">
                     <img src="image/rum.jpg">
                     <div class="rumtext">
                         瀏覽更多
