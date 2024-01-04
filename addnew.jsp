@@ -31,9 +31,9 @@
                 <div class="info2">
                     類別 
                     <select name="category" id="">
-                        <option value="1">蒸餾酒</option>
-                        <option value="2">釀造酒</option>
-                        <option value="3">合成酒</option>
+                        <option value="s">蒸餾酒</option>
+                        <option value="b">釀造酒</option>
+                        <option value="c">合成酒</option>
                     </select>
                     <br>
                     商品代碼 <input type="text"name="product_id"   size="30" maxlength="5">
