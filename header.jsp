@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.net.URLDecoder" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +31,7 @@
                 if(cookies[i].getName().equals("name"))
                 {   
                     name = cookies[i].getValue();
+                    name = URLDecoder.decode(name, "UTF-8");
                     out.print("<a class='username'>");
                     out.print("歡迎" + name);
                     out.print("</a>");

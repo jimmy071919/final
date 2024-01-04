@@ -19,6 +19,7 @@
 <body>
     <%
     String strname = request.getParameter("username");
+    strname = URLEncoder.encode(strname, "UTF-8");
     String strpassword = request.getParameter("password");
 
     // 檢查使用者名稱是否為 null，如果是，給予一個默認值

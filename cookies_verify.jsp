@@ -10,7 +10,6 @@
 </head>
 <body>
     <%
-
         boolean foundNameB = false;
 
         if(cookies != null){
