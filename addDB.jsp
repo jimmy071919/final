@@ -22,6 +22,16 @@
     String category = request.getParameter("category");
     int price = Integer.parseInt(request.getParameter("price"));
 
+    if (category.equals("s")) {
+        category = "蒸餾酒";
+    } else if (category.equals("b")) {
+        category = "釀造酒";
+    } else if (category.equals("c")) {
+        category = "合成酒";
+    }
+
+    
+
     // 检查是否已存在相同的主键值
     String checkQuery = "SELECT COUNT(*) FROM product WHERE product_id = '" + product_id + "'";
     ResultSet resultSet = con.createStatement().executeQuery(checkQuery);
