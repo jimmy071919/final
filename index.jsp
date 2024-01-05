@@ -50,8 +50,9 @@
             <a class="next" onclick="changeSlide(1)">&#10095;</a>
           </div>
         
+          
         </div>
-        <div>
+        <div class="DB">
             <div class="container">
                 <div class="button">
                     <input type="radio" name="tab" value="0" title="Best Seller" checked>
@@ -63,15 +64,16 @@
                 <div class="BestPic">
                     <!-- 熱銷一 -->
                     <%
-                        ResultSet resultSet = statement.executeQuery("SELECT *,  product_name, price, product_describe FROM product WHERE product_id = 14 ");
+                        ResultSet resultSet = statement.executeQuery("SELECT *,  product_name, price, product_describe,image_path FROM product WHERE product_id = 14 ");
                         if (resultSet.next()) {
                         String productId = resultSet.getString("product_Id");
                         String productName = resultSet.getString("product_name");
                         int productPrice = resultSet.getInt("price");
                         String description = resultSet.getString("product_describe");
+                        String imageUrl = resultSet.getString("image_path");
                     %>
                     <div class="BestWineBlock">
-                        <img class="BasePic" src="image/tequila.jpg" alt="">
+                        <img class="BasePic" src="<%=imageUrl%>" alt="">
                         <div class="BestText">龍舌蘭</div>
                         <div class="QuickView">
                     <!-- 商品簡介 -->
@@ -80,7 +82,7 @@
                             <div class="IntroContent">
                                 <div class="content">
                                     <span id='close' class="close">&times;</span>
-                                    <img class="IntroPic" src="image/tequila.jpg" >
+                                    <img class="IntroPic" src="<%=imageUrl%>" >
                                     <div class="IntroText">
                                         <div class="title">
                                             <h1>【<%=productName%>】</h1>
@@ -112,15 +114,16 @@
                     </div>
                     <!-- 熱銷二 -->
                     <%
-                    ResultSet resultSet2 = statement.executeQuery("SELECT *,  product_name, price, product_describe FROM product WHERE product_id = 12 ");
+                    ResultSet resultSet2 = statement.executeQuery("SELECT *,  product_name, price, product_describe,image_path FROM product WHERE product_id = 12 ");
                     if (resultSet2.next()) {
                     String productId2 = resultSet2.getString("product_Id");
                     String productName2 = resultSet2.getString("product_name");
                     int productPrice2 = resultSet2.getInt("price");
                     String description2 = resultSet2.getString("product_describe");
+                    String imageUrl2 = resultSet2.getString("image_path");
                     %>
                     <div class="BestWineBlock">
-                        <img class="BasePic" src="image/vodka.jpg" alt="">
+                        <img class="BasePic" src="<%=imageUrl2%>" alt="">
                         <div class="BestText">伏特加</div>
                         <div class="QuickView">
                             <button class="btn" data-introduce="introduce2">快速瀏覽</button>
@@ -128,7 +131,7 @@
                                 <div class="IntroContent">
                                     <div class="content">
                                         <span id='close' class="close">&times;</span>
-                                        <img class="IntroPic" src="image/vodka.jpg" >
+                                        <img class="IntroPic" src="<%=imageUrl2%>" >
                                         <div class="IntroText">
                                             <div class="title">
                                                 <h1>【<%=productName2%>】</h1>
@@ -157,15 +160,16 @@
                         %>
                     <!-- 熱銷三 -->
                     <%
-                        ResultSet resultSet3 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 13 ");
+                        ResultSet resultSet3 = statement.executeQuery("SELECT *, product_name, price, product_describe,image_path FROM product WHERE product_id = 13 ");
                         if (resultSet3.next()) {
                             String productId3 = resultSet3.getString("product_Id");
                             String productName3 = resultSet3.getString("product_name");
                             int productPrice3 = resultSet3.getInt("price");
                             String description3 = resultSet3.getString("product_describe");
+                            String imageUrl3 = resultSet3.getString("image_path");
                     %>
                     <div class="BestWineBlock">
-                        <img class="BasePic" src="image/gin.jpg" alt="">
+                        <img class="BasePic" src="<%=imageUrl3%>" alt="">
                         <div class="BestText">琴酒</div>
                         <div class="QuickView">
                             <button  class="btn" data-introduce="introduce3">快速瀏覽</button>
@@ -173,7 +177,7 @@
                                 <div class="IntroContent">
                                     <div class="content">
                                         <span id='close2' class="close">&times;</span>
-                                        <img class="IntroPic" src="image/gin.jpg" >
+                                        <img class="IntroPic" src="<%=imageUrl3%>" >
                                         <div class="IntroText">
                                             <div class="title">
                                                 <h1>【<%=productName3%>】</h1>
@@ -205,15 +209,16 @@
                     %>
                     <!-- 熱銷四 -->
                     <%
-                        ResultSet resultSet4 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 10 ");
+                        ResultSet resultSet4 = statement.executeQuery("SELECT *, product_name, price, product_describe,image_path FROM product WHERE product_id = 10 ");
                         if (resultSet4.next()) {
                             String productId4 = resultSet4.getString("product_Id");
                             String productName4 = resultSet4.getString("product_name");
                             int productPrice4 = resultSet4.getInt("price");
                             String description4 = resultSet4.getString("product_describe");
+                            String imageUrl4 = resultSet4.getString("image_path");
                     %>
                     <div class="BestWineBlock">
-                        <img class="BasePic" src="image/brandy.jpg" alt="">
+                        <img class="BasePic" src="<%=imageUrl4%>" alt="">
                         <div class="BestText">白蘭地</div>
                         <div class="QuickView">
                             <button class="btn" data-introduce="introduce4">快速瀏覽</button>
@@ -221,7 +226,7 @@
                                 <div class="IntroContent">
                                     <div class="content">
                                         <span id='close2' class="close">&times;</span>
-                                        <img class="IntroPic" src="image/brandy.jpg" >
+                                        <img class="IntroPic" src="<%=imageUrl4%>" >
                                         <div class="IntroText">
                                             <div class="title">
                                                 <h1>【<%=productName4%>】</h1>
@@ -255,15 +260,17 @@
                 <div class="BestPic">
                     <!-- 新品項一 -->
                     <%
-                        ResultSet resultSet5 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 2 ");
+                        ResultSet resultSet5 = statement.executeQuery("SELECT *, product_name, price, product_describe,image_path FROM product WHERE product_id = 2 ");
                         if (resultSet5.next()) {
                             String productId5 = resultSet5.getString("product_Id");
                             String productName5 = resultSet5.getString("product_name");
                             int productPrice5 = resultSet5.getInt("price");
                             String description5 = resultSet5.getString("product_describe");
+                            String imageUrl5 = resultSet5.getString("image_path");
+                            
                     %>
                     <div class="BestWineBlock">
-                        <img class="RWinePic" src="image/red.jpg" alt="">
+                        <img class="RWinePic" src="<%=imageUrl5%>" alt=""> 
                         <div class="BestText">紅葡萄酒</div>
                         <div class="QuickView">
                              <button class="btn" data-introduce="introduce5">快速瀏覽</button>
@@ -271,7 +278,7 @@
                                 <div class="IntroContent">
                                     <div class="content">
                                         <span id='close2' class="close">&times;</span>
-                                        <img class="RIntroPic2" src="image/red.jpg" >
+                                        <img class="RIntroPic2" src="<%=imageUrl5%>">
                                         <div class="IntroText2">
                                             <div class="title">
                                                 <h1>【<%=productName5%>】</h1>
@@ -301,15 +308,16 @@
                     %>
                     <!-- 新品項二 -->
                     <%
-                        ResultSet resultSet6 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 8 ");
+                        ResultSet resultSet6 = statement.executeQuery("SELECT *, product_name, price, product_describe,image_path FROM product WHERE product_id = 8 ");
                         if (resultSet6.next()) {
                             String productId6 = resultSet6.getString("product_Id");
                             String productName6 = resultSet6.getString("product_name");
                             int productPrice6 = resultSet6.getInt("price");
                             String description6 = resultSet6.getString("product_describe");
+                            String imageUrl6 = resultSet6.getString("image_path");
                     %>
                     <div class="BestWineBlock">
-                        <img class="WinePic" src="image/rose.jpg" alt="">
+                        <img class="WinePic" src="<%=imageUrl6%>" alt="">
                         <div class="BestText">玫瑰酒</div>
                         <div class="QuickView">
                             <button class="btn" data-introduce="introduce6">快速瀏覽</button>
@@ -317,7 +325,7 @@
                                 <div class="IntroContent">
                                     <div class="content">
                                         <span id='close2' class="close">&times;</span>
-                                        <img class="IntroPic2" src="image/rose.jpg" >
+                                        <img class="IntroPic2" src="<%=imageUrl6%>" >
                                         <div class="IntroText2">
                                             <div class="title">
                                                 <h1>【<%=productName6%>】</h1>
@@ -346,15 +354,16 @@
                     %>
                     <!-- 新品三 -->
                     <%
-                        ResultSet resultSet7 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 3 ");
+                        ResultSet resultSet7 = statement.executeQuery("SELECT *, product_name, price, product_describe,image_path FROM product WHERE product_id = 3 ");
                         if (resultSet7.next()) {
                             String productId7 = resultSet7.getString("product_Id");
                             String productName7 = resultSet7.getString("product_name");
                             int productPrice7 = resultSet7.getInt("price");
                             String description7 = resultSet7.getString("product_describe");
+                            String imageUrl7 = resultSet7.getString("image_path");
                     %>
                     <div class="BestWineBlock">
-                        <img class="WinePic" src="image/white.jpg" alt="">
+                        <img class="WinePic" src="<%=imageUrl7%>" alt="">
                         <div class="BestText">白酒</div>
                         <div class="QuickView">
                             <button class="btn" data-introduce="introduce7">快速瀏覽</button>
@@ -362,7 +371,7 @@
                                 <div class="IntroContent">
                                     <div class="content">
                                         <span id='close2' class="close">&times;</span>
-                                        <img class="IntroPic2" src="image/white.jpg" >
+                                        <img class="IntroPic2" src="<%=imageUrl7%>" >
                                         <div class="IntroText2">
                                             <div class="title">
                                                 <h1>【<%=productName7%>】</h1>
@@ -390,15 +399,16 @@
                     %>
                     <!-- 新品四 -->
                     <%
-                        ResultSet resultSet8 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 6 ");
+                        ResultSet resultSet8 = statement.executeQuery("SELECT *, product_name, price, product_describe,image_path FROM product WHERE product_id = 6 ");
                         if (resultSet8.next()) {
                             String productId8 = resultSet8.getString("product_Id");
                             String productName8 = resultSet8.getString("product_name");
                             int productPrice8 = resultSet8.getInt("price");
                             String description8 = resultSet8.getString("product_describe");
+                            String imageUrl8 = resultSet8.getString("image_path");
                     %>
                     <div class="BestWineBlock">
-                        <img class="CWinePic" src="image/spsp.jpg" alt="">
+                        <img class="CWinePic" src="<%=imageUrl8%>" alt="">
                         <div class="BestText">香檳</div>
                         <div class="QuickView">
                             <button class="btn" data-introduce="introduce8">快速瀏覽</button>
@@ -406,7 +416,7 @@
                                 <div class="IntroContent">
                                     <div class="content">
                                         <span id='close2' class="close">&times;</span>
-                                        <img class="IntroPic2" src="image/spsp.jpg" >
+                                        <img class="IntroPic2" src="<%=imageUrl8%>" >
                                         <div class="IntroText2">
                                             <div class="title">
                                                 <h1>【<%=productName8%>】</h1>
