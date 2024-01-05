@@ -14,7 +14,8 @@ create table member (
     email VARCHAR(50) NOT NULL,
     PRIMARY KEY (member_id)
 );
--- INSERT INTO member VALUES ('1001','侯有容','A231847591','0975405998','桃product園市中壢區中北路72號');
+INSERT INTO member VALUES ('1','10944161','1234','097237','hi','女','2001-12-06','laSKj@123');
+-- INSERT INTO member VALUES ('1001','侯有容','A231847591','0975405998','桃product園市中壢區中北路72號');-
 -- INSERT INTO member VALUES ('1002','陳冠豪','A131847591','0912345678','桃園市中壢區中北路70號');
 -- INSERT INTO member VALUES ('1003','朱品慈','H234567890','0934567890','桃園市中壢區中北路1號');
 
