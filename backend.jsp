@@ -34,7 +34,7 @@
    
         <div  class="button3"> <a href="order.jsp"  target="_blank" name="tab">訂單 </a>  </div>
        
-        <div  class="button4"><a href="onshelf.jsp" target="_blank" name="tab">修改刪除</a> </div>
+        <div  class="button4"><a href="onshelf.jsp" target="_blank" name="tab">上架</a> </div>
         
         <div  class="button5"> <a href="discount.jsp" target="_blank" name="tab">優惠</a> </div>
 
