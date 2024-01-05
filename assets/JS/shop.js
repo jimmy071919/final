@@ -51,7 +51,7 @@ function newCardItem(item) {
   temp += "<div>";
   temp += '<div class="production"><img src="./image/' + item.img + '"></img>';
   temp += '<div class="name">' + item.name + "</div>";
-  temp += '<p><a class="moreinfo"  href="./shop2.jsp?id=' + item.id + '">查看詳情</a></div></p>';
+  temp += '<p><a class="moreinfo"  href="./shop2.2.jsp?id=' + item.id + '">查看詳情</a></div></p>';
   temp += "</div>";
   // 這邊會呼應到上面的generateItems的函數
   return temp;
