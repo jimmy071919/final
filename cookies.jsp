@@ -19,59 +19,66 @@
 </head>
 <body>
 
-    <%
+<%
     Class.forName("com.mysql.cj.jdbc.Driver");
     String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-    Connection con = DriverManager.getConnection(url, "root", "");
+    Connection con = DriverManager.getConnection(url, "root", "mysql123");
     con.setAutoCommit(true);
     con.createStatement().execute("USE webDB");
 
-    // 从表单获取参数值
-    String strname = request.getParameter("username");
-    strname = URLEncoder.encode(strname, "UTF-8");
-    String strpassword = request.getParameter("password");
+    // 使用 PreparedStatement 防止 SQL 注入
+    String checkQuery_name = "SELECT COUNT(*) FROM member WHERE member_id = ?";
+    String checkQuery_password = "SELECT COUNT(*) FROM member WHERE password = ?";
+    
+    try (PreparedStatement pstmt_name = con.prepareStatement(checkQuery_name);
+         PreparedStatement pstmt_password = con.prepareStatement(checkQuery_password)) {
 
-    // 检查是否已存在相同的主键值
-    String checkQuery_name = "SELECT COUNT(*) FROM member WHERE member_id = '" + strname + "'";
-    String checkQuery_password = "SELECT COUNT(*) FROM member WHERE password = '" + strpassword + "'";
-    ResultSet resultSet = con.createStatement().executeQuery(checkQuery_name);
-    ResultSet resultSet2 = con.createStatement().executeQuery(checkQuery_password);
+        // 从表单获取参数值
+        String strname = request.getParameter("member_id");
+        String strpassword = request.getParameter("password");
 
+        // 设置 PreparedStatement 参数
+        pstmt_name.setString(1, strname);
+        pstmt_password.setString(1, strpassword);
 
-    int sum = 0;
+        // 执行查询
+        ResultSet resultSet_name = pstmt_name.executeQuery();
+        ResultSet resultSet_password = pstmt_password.executeQuery();
 
-    if (resultSet.next() && resultSet2.next()) {
-        int count = resultSet.getInt(1);
-        int count2 = resultSet2.getInt(1);
-        sum = count + count2;
-    }
+        int count_name = 0;
+        int count_password = 0;
 
-    if (sum == 0) {
-        response.sendRedirect("register.jsp");
-        session.setAttribute("message", "未進行註冊");
-        
-    } 
-    else if(sum == 1)
-    {
-        response.sendRedirect("register.jsp");
-        session.setAttribute("message", "帳號或密碼錯誤");
-    }
-    else if (sum == 2)
-    {
-        if (strname == null) {
-        strname = ""; // 或者其他默認值
+        if (resultSet_name.next() && resultSet_password.next()) {
+            count_name = resultSet_name.getInt(1);
+            count_password = resultSet_password.getInt(1);
         }
 
-        strname = URLEncoder.encode(strname, "UTF-8"); // Cookie中文編碼
+        int sum = count_name + count_password;
 
-        Cookie nameCookie = new Cookie("name", strname);
-        Cookie passwordCookie = new Cookie("password", strpassword);
+        if (sum == 0) {
+            response.sendRedirect("register.jsp");
+            session.setAttribute("message", "未進行註冊");
+        } else if (sum == 1) {
+            response.sendRedirect("register.jsp");
+            session.setAttribute("message", "帳號或密碼錯誤");
+        } else if (sum == 2) {
+            if (strname == null) {
+                strname = ""; // 或者其他默認值
+            }
 
-        response.addCookie(nameCookie);
-        response.addCookie(passwordCookie);
+            strname = URLEncoder.encode(strname, "UTF-8"); // Cookie中文編碼
+
+            Cookie nameCookie = new Cookie("name", strname);
+            Cookie passwordCookie = new Cookie("password", strpassword);
+
+            response.addCookie(nameCookie);
+            response.addCookie(passwordCookie);
         }
-
-    con.close();
+    } catch (SQLException e) {
+        e.printStackTrace(); // Handle SQLException appropriately in a production environment
+    } finally {
+        con.close();
+    }
 %>
 </body>
 </html>
