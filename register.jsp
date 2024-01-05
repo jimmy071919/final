@@ -11,22 +11,45 @@
     <link rel="stylesheet" href="assets/CSS/acccar.css">
 </head>
 <body>
+
     <%@include file = "header.jsp" %>
     <div class="container">
         <h2>註冊</h2>
-        <form action="cookies.jsp" method="post">
-          <label for="username">帳號</label>
-          <input type="text" id="username" name="username" required>
+        <%
+        if (session.getAttribute("message") != null) {
+            out.println("<div style='color: red'>");
+            out.println(session.getAttribute("message"));
+            out.println("</div>");
+            session.removeAttribute("message");
+        }
+    %>
+        <form action="register_DB.jsp" method="post">
+        <label for="member_id">帳號</label>
+        <input type="text" id="member_id" name="member_id" required>
 
-          <label for="username">電子郵件</label>
-          <input type="email" id="email" name="email" required>
+        <label for="username">姓名</label>
+        <input type="text" id="username" name="username" required>
 
-          <label for="username">輸入密碼</label>
-          <input type="password" id="password" name="password" required>
-          
-          <label for="confirm-password">確認密碼</label>
-          <input type="password" id="confirm-password" name="confirm-password" required>
+        <label for="email">電子郵件</label>
+        <input type="email" id="email" name="email" required>
 
+        <label for="tel">手機號碼</label>
+        <input type="tel" id="tel" name="tel" maxlength="10" required>
+        
+        <label for="birth">生日</label>
+        <input type="date" id="birth" name="birth" required>
+
+        <label for="gender">性別</label>
+        <select name="gender" id="">
+            <option value="M">男</option>
+            <option value="F">女</option>
+        </select>
+
+        <label for="username">輸入密碼</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="confirm-password">確認密碼</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
           <%
 
             String password = request.getParameter("password");

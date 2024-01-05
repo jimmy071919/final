@@ -16,30 +16,34 @@
     con.createStatement().execute("USE webDB");
 
     // 从表单获取参数值
-    String product_id = request.getParameter("product_id");
-    String product_name = request.getParameter("product_name");
-    int amount = Integer.parseInt(request.getParameter("amount"));
-    String category = request.getParameter("category");
-    int price = Integer.parseInt(request.getParameter("price"));
+    String member_id = request.getParameter("member_id");
+    String username = request.getParameter("username");
+    String email = request.getParameter("email");
+    String birth = request.getParameter("birth");
+    String tel = request.getParameter("tel");
+    String gender = request.getParameter("gender");
+    String password = request.getParameter("password");
 
     // 检查是否已存在相同的主键值
-    String checkQuery = "SELECT COUNT(*) FROM product WHERE product_id = '" + product_id + "'";
+    String checkQuery = "SELECT COUNT(*) FROM member WHERE member_id = '" + member_id + "'";
     ResultSet resultSet = con.createStatement().executeQuery(checkQuery);
     resultSet.next();
     int count = resultSet.getInt(1);
 
     if (count == 0) {
         // 不存在相同的主键值，可以执行插入操作
-        String insertQuery = "INSERT INTO product (product_id, product_name, amount, category, price) VALUES ('" + product_id + "', '" + product_name + "', " + amount + ", '" + category + "', " + price + ")";
+        String insertQuery = "INSERT INTO member (member_id, username,password, email, tel, gender, birth) VALUES ('" + member_id + "', '" + username + "', '" + password + "', '" + email + "', '" + tel + "', '" + gender + "', '" + birth + "')";
         boolean no = con.createStatement().execute(insertQuery);
         if (!no) {
             out.println("新增成功");
+            response.sendRedirect("register.jsp");
         } else {
             out.println("新增失敗");
         }
     } else {
         // 主键值已存在，根据需要进行处理
-        out.println("主键值已经存在，无法执行插入操作");
+        response.sendRedirect("register.jsp");
+        session.setAttribute("message", "帳號已存在");
     }
 
     con.close();

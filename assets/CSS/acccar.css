@@ -24,7 +24,8 @@ label {
 選擇所有type屬性值為text和password */
 input[type="text"],
 input[type="password"],
-input[type="email"]{
+input[type="email"],
+select{
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;

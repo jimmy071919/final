@@ -14,7 +14,7 @@
         try {
 //Step 2: 建立連線 
         	String url="jdbc:mysql://localhost/?serverTimezone=UTC";
-            Connection con=DriverManager.getConnection(url,"root","1234");   
+            Connection con=DriverManager.getConnection(url,"root","");   
 		//建立connection(連線)的語法，url代表我所要連結的MySQL所在IP，root是帳號，1234是密碼
 		//此連線是指和mySql連線，不是和存在mySql內的特定資料庫連線。		
 //Step 5: 顯示結果 				

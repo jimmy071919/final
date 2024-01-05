@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +11,7 @@
     <link rel="stylesheet" href="assets/CSS/header.css">
     <link rel="icon" href="image/logo.ico" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="assets/CSS/shop.css"></script>
-    <script src="assets/JS/shop2.js"></script>
+    <!-- <script src="assets/JS/shop2.js"></script> -->
     <title>卡拉雞尾酒🍸</title>
 </head>
 <body>
@@ -29,10 +30,10 @@
                 <input type="button" id="up" value="+"></input>
             </div>
             <br><br>
-            <div class="function">
+            <form  method="get" class="function" action="car_recode.jsp">
                 <input type="button" id="buy" value="直接購買">
                 <input type="button" id="addcart" value="加入購物車">
-            </div>
+            </form>
             <div id="productiondescription"></div>
         </div>
         <!-- ---------------------------------------------------------- -->

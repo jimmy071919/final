@@ -40,3 +40,18 @@ a[name="tab"]:hover
     background:#cedbd8;
     color:rgb(124, 124, 29);
 } 
+.order{
+    text-align: center;
+    padding: 20px;
+}
+.order_form{
+    padding: 20px;
+}
+.order_content{
+    text-align: center;
+    padding: 10px;
+}
+.order_form th{
+    text-align: center;
+    padding: 10px;
+}
