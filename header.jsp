@@ -64,7 +64,7 @@
             <a class="bar" href="./index.jsp">HOME</a>&emsp;
             <a class="bar" href="./shop.jsp">SHOP</a>&emsp;
             <a class="bar" href="./about.jsp">ABOUT US</a>
-            <a href="find.jsp"><img src='image/search.png' style='width:30px;height:30px margin-left 100px;'></a>
+            <a href="find.jsp"><img src='image/search_2.png' style='width:30px;height:30px margin-left 100px;'></a>
         
 
             
