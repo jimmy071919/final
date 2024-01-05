@@ -3,10 +3,11 @@
     margin: 0 auto;
     scroll-behavior: smooth;
 }
-.digcon{
+/* .digcon{
     display: grid;
     grid-template-rows: 500px 300px ;
-}
+} */
+
 .slide {
     grid-row: 1;
     position: absolute;
@@ -65,6 +66,7 @@
     align-items: center; 
     /* 垂直居中 */
     flex-direction: column;
+    margin-top: 770px;
   }
 /* 熱銷、新品按鈕 */
 .button {
