@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +13,32 @@
     <script src="assets/JS/index.js"></script>
 </head>
 <body>
-        <%@include file = "header.jsp" %>
-        <div class="digcon"></div>
+    <%@include file = "header.jsp" %>
+    <%
+    // Step 1: 載入資料庫驅動程式 
+    Class.forName("com.mysql.cj.jdbc.Driver");
+
+    // Step 2: 建立資料庫連線
+    String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
+    Connection con = DriverManager.getConnection(url, "root", "mysql123");
+
+    // Step 3: 選擇資料庫        
+    con.setAutoCommit(true);  
+    con.createStatement().execute("USE webDB");
+    Statement statement = con.createStatement();
+
+   //ResultSet resultSet = statement.executeQuery("SELECT *,  product_name, price, product_describe FROM product WHERE product_id in (2,3,6,8,10,12,13,14)");
+
+    //String productname = request.getParameter("product_name");
+   // int productPrice = Integer.parseInt(request.getParameter("price"));
+    //String description = resultSet.getString("product_describe");
+/*
+        String productId = resultSet.getString("product_Id");
+        String productName = resultSet.getString("product_name");
+        int productPrice = resultSet.getInt("price");
+        String description = resultSet.getString("product_describe");*/
+        %>
+
         <div class="slide_container">
             <div class="carousel">
               <img class="slide" src="image/wine1.jpg" alt="Image 1">
@@ -37,6 +62,14 @@
                 <!-- 熱銷品項 -->
                 <div class="BestPic">
                     <!-- 熱銷一 -->
+                    <%
+                        ResultSet resultSet = statement.executeQuery("SELECT *,  product_name, price, product_describe FROM product WHERE product_id = 14 ");
+                        if (resultSet.next()) {
+                        String productId = resultSet.getString("product_Id");
+                        String productName = resultSet.getString("product_name");
+                        int productPrice = resultSet.getInt("price");
+                        String description = resultSet.getString("product_describe");
+                    %>
                     <div class="BestWineBlock">
                         <img class="BasePic" src="image/tequila.jpg" alt="">
                         <div class="BestText">龍舌蘭</div>
@@ -50,18 +83,15 @@
                                     <img class="IntroPic" src="image/tequila.jpg" >
                                     <div class="IntroText">
                                         <div class="title">
-                                            <h1>【龍舌蘭】</h1>
+                                            <h1>【<%=productName%>】</h1>
                                         </div>
                                         <div class="price" >
-                                            <h2>$99000</h2>
+                                            <h2>$<%=productPrice%></h2>
                                         </div>
                                         <div class="con2">
                                             <h4>【簡介】</h4>
                                             <p>
-                                                以其材料命名，使用龍舌蘭草的莖為原料而製成的蒸餾酒，
-                                                是墨西哥原生的酒品。龍舌蘭屬於多肉植物的一種，
-                                                外觀長得像巨大的鳳梨，而龍舌蘭的莖又稱為龍舌蘭心（Piña），
-                                                含有大量的糖份，非常適合釀酒。
+                                                <%=description%>
                                             </p>
                                             <h4>【口感】</h4>
                                             <p>
@@ -74,11 +104,21 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
+                        </div>
+                        <%
+                                 } 
+                                %>
                      </div>
                     </div>
-            
                     <!-- 熱銷二 -->
+                    <%
+                    ResultSet resultSet2 = statement.executeQuery("SELECT *,  product_name, price, product_describe FROM product WHERE product_id = 12 ");
+                    if (resultSet2.next()) {
+                    String productId2 = resultSet2.getString("product_Id");
+                    String productName2 = resultSet2.getString("product_name");
+                    int productPrice2 = resultSet2.getInt("price");
+                    String description2 = resultSet2.getString("product_describe");
+                    %>
                     <div class="BestWineBlock">
                         <img class="BasePic" src="image/vodka.jpg" alt="">
                         <div class="BestText">伏特加</div>
@@ -91,19 +131,15 @@
                                         <img class="IntroPic" src="image/vodka.jpg" >
                                         <div class="IntroText">
                                             <div class="title">
-                                                <h1>【伏特加】</h1>
+                                                <h1>【<%=productName2%>】</h1>
                                             </div>
                                             <div class="price" >
-                                                <h2>$1389</h2>
+                                                <h2>$<%=productPrice2%></h2>
                                             </div>
                                             <div class="con2">
                                                 <h4>【簡介】</h4>
                                                 <p>
-                                                    伏特加是由澱粉類穀物或根莖類作物（馬鈴薯、黑麥、小麥等）作為原料，
-                                                    經過至少三重蒸餾處理的酒種。經過多重蒸餾會讓伏特加更純淨美味，
-                                                    但也因為伏特加像水一樣無色無味的特性，常常被戲稱為「沒有個性的酒」。
-                                                    這樣無個性的他，不僅可以說是重度酒精愛好者的最愛（可以純飲、凍飲、加冰塊），
-                                                    更可以看手邊有什麼飲料就配什麼喝，讓不太習慣酒精味的人也能找到適合自己的喝法。
+                                                    <%=description2%>
                                                 </p>
                                                 <h4>【口感】</h4>
                                                 <p>
@@ -116,7 +152,18 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                            }
+                        %>
                     <!-- 熱銷三 -->
+                    <%
+                        ResultSet resultSet3 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 13 ");
+                        if (resultSet3.next()) {
+                            String productId3 = resultSet3.getString("product_Id");
+                            String productName3 = resultSet3.getString("product_name");
+                            int productPrice3 = resultSet3.getInt("price");
+                            String description3 = resultSet3.getString("product_describe");
+                    %>
                     <div class="BestWineBlock">
                         <img class="BasePic" src="image/gin.jpg" alt="">
                         <div class="BestText">琴酒</div>
@@ -129,18 +176,16 @@
                                         <img class="IntroPic" src="image/gin.jpg" >
                                         <div class="IntroText">
                                             <div class="title">
-                                                <h1>【琴酒】</h1>
+                                                <h1>【<%=productName3%>】</h1>
                                             </div>
                                             <div class="price" >
-                                                <h2>$1500</h2>
+                                                <h2>$<%=productPrice3%></h2>
                                             </div>
                                             <div class="con2">
                                                 <h4>【簡介】</h4>
-                                                <p>
-                                                    琴酒透過蒸餾將原料風味封存調和於酒液之中，
-                                                    不同原料的香氣分子揮發的順序殊異，也讓琴酒氣味如同香水。
-                                                    每款琴酒因為添加原枓、使用基酒、酒精濃度各自不同，品飲變化度也相當多樣，這正是琴酒迷人之處。
-                                                </p>
+                                                    <p>
+                                                        <%=description3%>
+                                                    </p>
                                                 <h4>【氣味】</h4>
                                                 <p>
                                                     琴酒氣味如同香水般擁有前調（Top Notes）、
@@ -155,7 +200,18 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                        }
+                    %>
                     <!-- 熱銷四 -->
+                    <%
+                        ResultSet resultSet4 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 10 ");
+                        if (resultSet4.next()) {
+                            String productId4 = resultSet4.getString("product_Id");
+                            String productName4 = resultSet4.getString("product_name");
+                            int productPrice4 = resultSet4.getInt("price");
+                            String description4 = resultSet4.getString("product_describe");
+                    %>
                     <div class="BestWineBlock">
                         <img class="BasePic" src="image/brandy.jpg" alt="">
                         <div class="BestText">白蘭地</div>
@@ -168,19 +224,15 @@
                                         <img class="IntroPic" src="image/brandy.jpg" >
                                         <div class="IntroText">
                                             <div class="title">
-                                                <h1>【白蘭地】</h1>
+                                                <h1>【<%=productName4%>】</h1>
                                             </div>
                                             <div class="price" >
-                                                <h2>$1200</h2>
+                                                <h2>$<%=productPrice4%></h2>
                                             </div>
                                             <div class="con2">
                                                 <h4>【簡介】</h4>
                                                 <p>
-                                                    於白蘭地於廣義上，
-                                                    是任何以水果作基酒蒸餾製成的，
-                                                    再經蒸餾，酒精濃度達35%-60%的烈酒，
-                                                    都可以叫作白蘭地，除了常見以葡萄釀製的白蘭地，
-                                                    還有蘋果白蘭地(Calvados)及櫻桃白蘭地(Kirsch)等
+                                                    <%=description4%>
                                                 </p>
                                                 <h4>【氣味】</h4>
                                                 <p>
@@ -194,11 +246,22 @@
                         </div>
                     </div>
                 </div>
+                <%
+                    }
+                %>
             </div>
             <div id="NewProducts" class="Products">
                 <!-- 新品項 -->
                 <div class="BestPic">
                     <!-- 新品項一 -->
+                    <%
+                        ResultSet resultSet5 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 2 ");
+                        if (resultSet5.next()) {
+                            String productId5 = resultSet5.getString("product_Id");
+                            String productName5 = resultSet5.getString("product_name");
+                            int productPrice5 = resultSet5.getInt("price");
+                            String description5 = resultSet5.getString("product_describe");
+                    %>
                     <div class="BestWineBlock">
                         <img class="RWinePic" src="image/red.jpg" alt="">
                         <div class="BestText">紅葡萄酒</div>
@@ -211,19 +274,15 @@
                                         <img class="RIntroPic2" src="image/red.jpg" >
                                         <div class="IntroText2">
                                             <div class="title">
-                                                <h1>【希哈 紅葡萄酒】</h1>
+                                                <h1>【<%=productName5%>】</h1>
                                             </div>
                                             <div class="price" >
-                                                <h2>$1900</h2>
+                                                <h2>$<%=productPrice5%></h2>
                                             </div>
                                             <div class="con2">
                                                 <h4>【簡介】</h4>
                                                 <p>
-                                                    最為出名的葡萄酒品種，在品酒會上，
-                                                    往往是壓軸的葡萄酒款。
-                                                    就連號稱紅葡萄之王的卡本內蘇維濃都要閃邊站。
-                                                    奔放的水果香氣伴隨濃濃的香料味，加上厚重的酒體，
-                                                    你很難忽略它的存在。
+                                                    <%=description5%>
                                                 </p>
                                                 <h4>【氣味】</h4>
                                                 <p>
@@ -237,7 +296,18 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                        }
+                    %>
                     <!-- 新品項二 -->
+                    <%
+                        ResultSet resultSet6 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 8 ");
+                        if (resultSet6.next()) {
+                            String productId6 = resultSet6.getString("product_Id");
+                            String productName6 = resultSet6.getString("product_name");
+                            int productPrice6 = resultSet6.getInt("price");
+                            String description6 = resultSet6.getString("product_describe");
+                    %>
                     <div class="BestWineBlock">
                         <img class="WinePic" src="image/rose.jpg" alt="">
                         <div class="BestText">玫瑰酒</div>
@@ -250,18 +320,15 @@
                                         <img class="IntroPic2" src="image/rose.jpg" >
                                         <div class="IntroText2">
                                             <div class="title">
-                                                <h1>【Provence Rose】</h1>
+                                                <h1>【<%=productName6%>】</h1>
                                             </div>
                                             <div class="price" >
-                                                <h3>$9000</h3>
+                                                <h3>$<%=productPrice6%></h3>
                                             </div>
                                             <div class="con2">
                                                 <h4>【簡介】</h4>
                                                 <p>
-                                                    炎炎夏日配上一杯冰涼的玫瑰酒不再只是潮流，
-                                                    更加是愛酒之人夏日必備之選。玫瑰酒在任何場合都有出色表現，
-                                                    因為它可以輕易配搭不同食物，能喝上一杯果香宜人、清新冰涼的玫瑰酒，
-                                                    絕對可以令您的夏日更添愜意。
+                                                    <%=description6%>
                                                 </p>
                                                 <h4>【氣味】</h4>
                                                 <p>
@@ -274,7 +341,18 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                        }
+                    %>
                     <!-- 新品三 -->
+                    <%
+                        ResultSet resultSet7 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 3 ");
+                        if (resultSet7.next()) {
+                            String productId7 = resultSet7.getString("product_Id");
+                            String productName7 = resultSet7.getString("product_name");
+                            int productPrice7 = resultSet7.getInt("price");
+                            String description7 = resultSet7.getString("product_describe");
+                    %>
                     <div class="BestWineBlock">
                         <img class="WinePic" src="image/white.jpg" alt="">
                         <div class="BestText">白酒</div>
@@ -287,22 +365,15 @@
                                         <img class="IntroPic2" src="image/white.jpg" >
                                         <div class="IntroText2">
                                             <div class="title">
-                                                <h1>【夏多內 白葡萄酒】</h1>
+                                                <h1>【<%=productName7%>】</h1>
                                             </div>
                                             <div class="price" >
-                                                <h3>$9000</h3>
+                                                <h3>$<%=productPrice7%> </h3>
                                             </div>
                                             <div class="con2">
                                                 <h4>【簡介】</h4>
                                                 <p>
-                                                    世界上最受歡迎的白葡萄品種之一，
-                                                    其對氣候強大的適應力，世界各地都可以看到它的蹤影。
-                                                    隨著風土條件與釀造師風格的不同，夏多內釀造的白酒可說是千變萬化，
-                                                    從法國香檳區的白中白香檳，到夏布利
-                                                    那帶有礦石味與檸檬氣,息的清爽滋味，又或是美國釀造，浸泡橡木桶後圓潤豐滿的奶油味，
-                                                    夏多內在每個地方都有不同的際遇。
-            
-                                                </p>
+                                                    <%=description7%> </p>
                                                 <h4>【氣味】</h4>
                                                 <p>
                                                     檸檬，蘋果，杏桃，鳳梨，百香果，桃子，柑桔和李子都是夏多內中可能出現的氣息。
@@ -314,7 +385,18 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                        }
+                    %>
                     <!-- 新品四 -->
+                    <%
+                        ResultSet resultSet8 = statement.executeQuery("SELECT *, product_name, price, product_describe FROM product WHERE product_id = 6 ");
+                        if (resultSet8.next()) {
+                            String productId8 = resultSet8.getString("product_Id");
+                            String productName8 = resultSet8.getString("product_name");
+                            int productPrice8 = resultSet8.getInt("price");
+                            String description8 = resultSet8.getString("product_describe");
+                    %>
                     <div class="BestWineBlock">
                         <img class="CWinePic" src="image/spsp.jpg" alt="">
                         <div class="BestText">香檳</div>
@@ -327,16 +409,15 @@
                                         <img class="IntroPic2" src="image/spsp.jpg" >
                                         <div class="IntroText2">
                                             <div class="title">
-                                                <h1>【Moet & Chandon Brut Impérial】</h1>
+                                                <h1>【<%=productName8%>】</h1>
                                             </div>
                                             <div class="price" >
-                                                <h3>$2000</h3>
+                                                <h3>$<%=productPrice8%></h3>
                                             </div>
                                             <div class="con2">
                                                 <h4>【簡介】</h4>
                                                 <p>
-                                                    Moet & Chandon Brut Impérial是酩悅香檳酒廠的旗艦商品，
-                                                    最具代表性的特徵是它活潑生動的果香，在味蕾上的表現又相當的優雅細膩。
+                                                    <%=description8%>
                                                 </p>
                                                 <h4>【氣味】</h4>
                                                 <p>
@@ -351,12 +432,23 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>
     </div>
+    <%
+        resultSet.close();
+        con.close();
+    %>
+
+
     <img class='kala' src="image/mmm2.png" id="burger">
     <img src="image/BeerCat.png" id="Beer">
+   
+
     <%@include file = "footer.jsp" %>
 </body>
 </html>
