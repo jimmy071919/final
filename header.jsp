@@ -47,6 +47,7 @@
             out.print("<div class='login'><a href='./login.jsp'><img src='image/login.png' style='width:60px;height:60px'></a></div> ");
         }
         %>
+        <div> <a href="find.jsp"><img src='image/search.jpg' style='width:60px;height:60px margin-left 100px;'></a></div>
         <div class="accpic">
             <a href="./account.jsp"><img src="image/account.png" style="width:50px;height:50px"></a>
         </div>
