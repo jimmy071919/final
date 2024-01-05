@@ -58,6 +58,7 @@
     
     <br>
     <!-- <a href="footer.jsp"></a> -->
+    
     <%@include file = "cookies_backend_verify.jsp" %>
     <%@include file = "footer.jsp" %>
 

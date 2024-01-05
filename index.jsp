@@ -20,7 +20,7 @@
 
     // Step 2: 建立資料庫連線
     String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-    Connection con = DriverManager.getConnection(url, "root", "mysql123");
+    Connection con = DriverManager.getConnection(url, "root", "");
 
     // Step 3: 選擇資料庫        
     con.setAutoCommit(true);  

@@ -16,7 +16,7 @@
 
     <div class="order">
         <p>寄件資料</p>
-        <form action="">
+        <form action=" order_build.jsp ">
             姓名:<input type="text" name="name" >
             <br>
             地址:<input type="text" name="address" >

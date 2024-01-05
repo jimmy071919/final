@@ -22,7 +22,7 @@
 <%
     Class.forName("com.mysql.cj.jdbc.Driver");
     String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-    Connection con = DriverManager.getConnection(url, "root", "mysql123");
+    Connection con = DriverManager.getConnection(url, "root", "");
     con.setAutoCommit(true);
     con.createStatement().execute("USE webDB");
 

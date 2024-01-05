@@ -47,13 +47,13 @@
             out.print("<div class='login'><a href='./login.jsp'><img src='image/login.png' style='width:60px;height:60px'></a></div> ");
         }
         %>
-        <div> <a href="find.jsp"><img src='image/search.jpg' style='width:60px;height:60px margin-left 100px;'></a></div>
+        
         <div class="accpic">
             <a href="./account.jsp"><img src="image/account.png" style="width:50px;height:50px"></a>
         </div>
         <div class="car">
             <a href="./car.jsp"><img src="image/shop.png" style="width:50px;height:50px" ></a>
-        </div>`
+        </div>
     </header>
     <div class="backtotop">
         <a href="#Top" title="回到最上方">
@@ -63,9 +63,9 @@
         <nav>
             <a class="bar" href="./index.jsp">HOME</a>&emsp;
             <a class="bar" href="./shop.jsp">SHOP</a>&emsp;
-            <a class="bar" href="./customized.jsp">CUSTOMIZED</a>&emsp;
             <a class="bar" href="./about.jsp">ABOUT US</a>
-
+            <a href="find.jsp"><img src='image/search.png' style='width:30px;height:30px margin-left 100px;'></a>
+        
 
             
             <%

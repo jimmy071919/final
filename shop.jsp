@@ -24,30 +24,84 @@
             <h1 class="shoptitle" id="title1">蒸餾酒</h1>
             <div class="shoplist" id="list">
                 <!-- 在shop.js中 -->
+            <%
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost/webDB?serverTimezone=UTC";
+            Connection con = DriverManager.getConnection(url, "root", "");
+            con.createStatement().execute("USE webDB");
+            Statement statement = con.createStatement();
+            
+            for (int i = 1; i <= 5; i++) {
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM product WHERE `product_id` = " + i);
+                while (resultSet.next()) {
+                    String productId = resultSet.getString("product_id");
+                    String productName = resultSet.getString("product_name");
+                    double price = resultSet.getDouble("price");
+                    String productDescribe = resultSet.getString("product_describe");
+                    String imageUrl = resultSet.getString("image_path");
+
+                    // 這裡使用了實際的資料庫字段
+                    out.println("<div>");
+                    out.println("<div class=\"production\"><img src=\"" + imageUrl + "\"></img>");
+                    out.println("<div class=\"name\">" + productName + "</div>");
+                    out.println("<p><a class=\"moreinfo\"  href=\"./shop2.2.jsp?id=" + productId + "\">查看詳情</a></div></p>");
+                    out.println("</div>");
+                }
+            }
+            %>
+                
             </div>
             <!--  -->
             <h1 class="shoptitle" id="title2">釀造酒</h1>
             <div class="shoplist" id="list2">
-                <!-- 在shop.js中 -->
+                <%
+                for (int i = 6; i <= 10; i++) {
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM product WHERE `product_id` = " + i);
+                    while (resultSet.next()) {
+                        String productId = resultSet.getString("product_id");
+                        String productName = resultSet.getString("product_name");
+                        double price = resultSet.getDouble("price");
+                        String productDescribe = resultSet.getString("product_describe");
+                        String imageUrl = resultSet.getString("image_path");
+    
+                        // 這裡使用了實際的資料庫字段
+                        out.println("<div>");
+                        out.println("<div class=\"production\"><img src=\"" + imageUrl + "\"></img>");
+                        out.println("<div class=\"name\">" + productName + "</div>");
+                        out.println("<p><a class=\"moreinfo\"  href=\"./shop2.2.jsp?id=" + productId + "\">查看詳情</a></div></p>");
+                        out.println("</div>");
+                    }
+                }
+                %>
             </div>
             <!--  -->
             <h1 class="shoptitle" id="title3">合成酒</h1>
             <div class="shoplist" id="list3">
-                <!-- 在shop2.js中 -->
+                <%
+                for (int i = 11; i <= 16; i++) {
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM product WHERE `product_id` = " + i);
+                    while (resultSet.next()) {
+                        String productId = resultSet.getString("product_id");
+                        String productName = resultSet.getString("product_name");
+                        double price = resultSet.getDouble("price");
+                        String productDescribe = resultSet.getString("product_describe");
+                        String imageUrl = resultSet.getString("image_path");
+    
+                        // 這裡使用了實際的資料庫字段
+                        out.println("<div>");
+                        out.println("<div class=\"production\"><img src=\"" + imageUrl + "\"></img>");
+                        out.println("<div class=\"name\">" + productName + "</div>");
+                        out.println("<p><a class=\"moreinfo\"  href=\"./shop2.2.jsp?id=" + productId + "\">查看詳情</a></div></p>");
+                        out.println("</div>");
+                    }
+                }
+                %>
             </div>
             <!-- ----------------- -->
                 
         </div>
     </article>
-
-    
     <%
-
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-    Connection con = DriverManager.getConnection(url, "root", "mysql123");
-    con.setAutoCommit(true);
-    con.createStatement().execute("USE webDB");
 
     request.setCharacterEncoding("UTF-8");
     String[] selectedProductIds = request.getParameterValues("selectedProducts");

@@ -81,7 +81,7 @@
                 out.println("刪除失敗");
         }
     }
-
+    response.sendRedirect("addnew.jsp");
     con.close();
 %>
 </body>

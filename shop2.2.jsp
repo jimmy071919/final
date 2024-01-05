@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="assets/CSS/shop.css">
     <link rel="stylesheet" href="assets/CSS/header.css">
     <link rel="icon" href="image/logo.ico" type="image/x-icon">
-    <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-    <!-- <script src="assets/JS/shop2.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="assets/JS/shop2.js"></script>
     <title>卡拉雞尾酒🍸</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
 
         // Step 2: 建立資料庫連線
         String url = "jdbc:mysql://localhost/webDB?serverTimezone=UTC";
-        Connection con = DriverManager.getConnection(url, "root", "mysql123");
+        Connection con = DriverManager.getConnection(url, "root", "");
 
         // Step 3: 選擇資料庫           
         con.createStatement().execute("USE webDB");
@@ -56,23 +56,31 @@
             String productName = resultSet.getString("product_name");
             double price = resultSet.getDouble("price");
             String productdescribe = resultSet.getString("product_describe");
+            int  amount = Integer.parseInt(resultSet.getString("amount"));
+            String imageUrl = resultSet.getString("image_path");
+            
+            
     %>
     <!-- ------------------------------------------------------------------------- -->
     <div id="shop2">
         <div class="gotobuy">
-            <img id="productionimg">
+            <img id="productionimg" src="<%=imageUrl%>">
             <div id="productionname"><%=productName%></div><br>
             <div id="productionprice">價格 : <%=price%></div>
-            <div class="number">
-                <input type="button" id="down" value="-"></input>
-                <input type="text" id="num" value="0" ></input>
-                <input type="button" id="up" value="+"></input>
-            </div>
+            <div id="productionamount">庫存 : <%=amount%></div>
+        
             <br><br>
-            <form  method="get" class="function" action="car_recode.jsp">
-                <input type="button" id="buy" value="直接購買">
-                <input type="button" id="addcart" value="加入購物車">
+            <form method="get" class="function" action="car_recode.jsp">
+                <input type="hidden" name="productcart" value=<%=id%>>
+                <input type="button" name="addcart" id="addcart" value="加入購物車" onclick="submitForm()">
             </form>
+            
+            <script>
+                function submitForm() {
+                    document.forms[0].submit();
+                }
+            </script>
+
             <div id="productiondescription">
                 <%= productdescribe %>
             </div>
