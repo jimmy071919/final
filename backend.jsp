@@ -10,6 +10,7 @@
 </head>
 <body>
     <%@include file = "header.jsp" %>
+    
     <%
 
         boolean foundNameB = false;
@@ -28,12 +29,12 @@
         }
     %>
     <div class="container">
-        <div class="button1" > <a href="addnew.jsp" target="_blank" name="tab"> 新增</a> </div>
-        <div  class="button2"> <a href="modify.jsp" target="_blank"  name="tab"> 修改</a> </div>
+        <div class="button1" > <a href="addnew.jsp" target="_blank" name="tab"> 新增上架</a> </div>
+        <div  class="button2"> <a href="delete.jsp" target="_blank"  name="tab"> 修改刪除 </a> </div>
    
         <div  class="button3"> <a href="order.jsp"  target="_blank" name="tab">訂單 </a>  </div>
        
-        <div  class="button4"><a href="onshelf.jsp" target="_blank" name="tab">上架</a> </div>
+        <div  class="button4"><a href="onshelf.jsp" target="_blank" name="tab">修改刪除</a> </div>
         
         <div  class="button5"> <a href="discount.jsp" target="_blank" name="tab">優惠</a> </div>
 

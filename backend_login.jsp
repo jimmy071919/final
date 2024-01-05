@@ -12,6 +12,7 @@
 </head>
 <body>
     <%@include file = "header.jsp" %>
+   
     <%
         boolean foundNameB = false;
 

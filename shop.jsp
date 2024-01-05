@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +42,13 @@
 
     
     <%
+
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
+    Connection con = DriverManager.getConnection(url, "root", "mysql123");
+    con.setAutoCommit(true);
+    con.createStatement().execute("USE webDB");
+
     request.setCharacterEncoding("UTF-8");
     String[] selectedProductIds = request.getParameterValues("selectedProducts");
         if (selectedProductIds != null) {
@@ -50,6 +58,10 @@
         } else {
             out.println("未選擇任何產品。");
         }
+
+    // Step 6: 關閉資源        
+    con.close();
+
     %>
     
     <%@include file = "footer.jsp" %>
