@@ -27,8 +27,7 @@
 
         int sum = 0;    
         int count_num = 0;
-        
-        // 从 session 中检索 List
+
         List<String> productList = (List<String>) session.getAttribute("productList");
     %>
     <article class='gocar'>

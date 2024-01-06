@@ -16,12 +16,12 @@
     </script>
 </head>
 <body>
-    <%@include file = "header.jsp" %>
-<h2>產品搜尋</h2>
+
+<h2>Product Search</h2>
 <form onsubmit="showResults(); return false;">
-    <label for="searchTerm">關鍵字:</label>
+    <label for="searchTerm">Search Term:</label>
     <input type="text" id="searchTerm" name="searchTerm">
-    <button type="submit">查詢</button>
+    <button type="submit">Search</button>
 </form>
 
 <%
@@ -43,9 +43,9 @@
 
             // Display search results
             out.println("<div id='searchResults' class='search-results'>");
-            out.println("<h3>查詢結果 '" + searchTerm + "':</h3>");
+            out.println("<h3>Search Results for '" + searchTerm + "':</h3>");
             out.println("<table border='1'>");
-            out.println("<tr><th>Product ID</th><th>Product Name</th><th>Amount</th><th>Category</th><th>Price</th><th>Product Description</th></tr>");
+            out.println("<tr><th>Product ID</th><th>Product Name</th><th>Amount</th><th>Category</th><th>Price</th><th>Product Description</th><th>Image Path</th></tr>");
 
             while (resultSet.next()) {
                 String productId = resultSet.getString("product_id");
@@ -54,9 +54,9 @@
                 String category = resultSet.getString("category");
                 int price = resultSet.getInt("price");
                 String productDescription = resultSet.getString("product_describe");
-               // String imagePath = resultSet.getString("image_path");
+                String imagePath = resultSet.getString("image_path");
 
-                out.println("<tr><td>" + productId + "</td><td>" + productName + "</td><td>" + amount + "</td><td>" + category + "</td><td>" + price + "</td><td>" + productDescription + "</td></tr>");
+                out.println("<tr><td>" + productId + "</td><td>" + productName + "</td><td>" + amount + "</td><td>" + category + "</td><td>" + price + "</td><td>" + productDescription + "</td><td>" + imagePath + "</td></tr>");
             }
 
             out.println("</table>");
@@ -68,5 +68,6 @@
         }
     }
 %>
+
 </body>
 </html>
